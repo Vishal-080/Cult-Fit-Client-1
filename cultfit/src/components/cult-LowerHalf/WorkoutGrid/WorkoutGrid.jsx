@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 /******* Styled components ********/
 
 const Grid = styled.div`
+  width: 1200px;
+  margin: auto;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
