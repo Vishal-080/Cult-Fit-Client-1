@@ -1,11 +1,17 @@
 *{
   margin:0px;
-  padding:0px
+  padding:0px;
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  src: URL('./Fonts/BrandonText-Regular.otf') format('truetype');
 }
 
 .App {
   text-align: center;
   width:1440px;
+  font-family: 'Brandon Text';
 }
 
 .App-logo {
