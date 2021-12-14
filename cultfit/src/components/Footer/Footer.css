@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'brandon';
+    src: url("images/font.otf") format("opentype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'brandon', serif;
+}
+
+.footer-container{
+    width: 100%;
+    padding-bottom: 50px;
+    background-color: black;
+}
+
+
+.flex{
+    display: flex;
+}
+
+.logo-img{
+    margin: 56px 7px 20px 123px;
+}
+
+.footer-text{
+    width: 400px;
+    height: 60px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin-left: 123px;
+}
+
+.footer-link{
+    margin-top: 50px;
+    margin-bottom: 110px;
+}
+
+.footer-link > p{
+    color: white;
+    margin: 0px 0px 12px 96px;
+    text-align: right;
+}
+
+.footer-links{
+    margin-top: 50px;
+}
+
+.footer-links p{
+    color: white;
+    margin: 0px 99px 12px 96px;
+    text-align: right;
+}
+
+.apps-logo{
+    margin: 51px 0px 0px 0px;
+}
+
+.footer-other-links{
+    display: flex;
+    gap: 60px;
+    margin-left: 120px;
+}
+.footer-other-links p{
+    font-style: normal;
+    font-weight: 390;
+    font-size: 12px;
+    line-height: 20px;
+    color: #A2A2A2;
+}
+.social-logo{
+    margin-left: 500px;
+}
