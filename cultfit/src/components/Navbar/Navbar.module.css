@@ -1,0 +1,26 @@
+.Navbar{
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-color: white;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px #00000044;
+    font-family: "Brandon Text Regular";
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.Navbar>div {
+    border:1px solid red;
+    /* width: 44.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: "Brandon Text Medium";
+    margin-left: 172px;
+    margin-top: 6px; */
+  }
