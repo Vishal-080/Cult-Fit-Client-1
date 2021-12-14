@@ -36,10 +36,6 @@ export const Intro = () => {
   `;
 
     useEffect(() => {
-        if (firstRender.current === true) {
-            firstRender.current = false;
-            return;
-        }
 
         const interval = setInterval(() => {
             setSeconds((seconds) => {
@@ -50,6 +46,12 @@ export const Intro = () => {
                 }
             });
         }, 3200);
+        
+        if (firstRender.current === true) {
+            firstRender.current = false;
+            return;
+        }
+
         return () => clearInterval(interval);
     });
 
