@@ -14,6 +14,11 @@
     width:1440px;
     font-style: normal;
     font-weight: 390;
+    /* border:1px solid red; */
+}
+
+.Navbar>div:nth-child(1) {
+  /* margin-right: 20%; */
 }
 
 .Navbar>div:nth-child(2) {
@@ -22,7 +27,8 @@
     justify-content: space-around;
     font-size: 12px;
     line-height: 17px;
-    width:36.61%;
+    width:38.61%;
+    /* margin-right: 14.86%; */
   }
 
   .Navbar>div:nth-child(3) {
