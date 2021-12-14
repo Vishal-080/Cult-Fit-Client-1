@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { SliderCardHomePAge } from './Cards/Cards';
 import { Intro } from "./Intro/Intro";
 import { Navbar } from "./Navbar/Navbar";
+import { StaticData } from "./Static/Static";
 
 export const LandingPage = () => {
     const [sliding, setSliding] = useState([]);
@@ -22,7 +23,7 @@ export const LandingPage = () => {
             {sliding?.map((e) => (
                 <SliderCardHomePAge key={e._id} {...e} />
             ))}
-
+            <StaticData/>
         </>
     );
 };

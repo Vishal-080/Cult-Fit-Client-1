@@ -56,11 +56,12 @@ export const WorkoutGrid = () => {
       {workouts.map((el, i) => (
         <GridItem key={i}>
           <p>{el}</p>
+          {/* <img src="/workoutgrid_img/grid1.svg" alt={el} /> */}
           <img
             onClick={() => {
               history.push("/");
             }}
-            src={`workoutgrid_img/grid${i + 1}.svg`}
+            src={`/workoutgrid_img/grid${i + 1}.svg`}
             alt={el}
           />
         </GridItem>

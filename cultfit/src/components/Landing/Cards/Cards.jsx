@@ -158,7 +158,7 @@ export const SliderCardHomePAge = ({
                 <div className="sub_heading_section">
                     <h3 className="subheading">{subTitle}</h3>
                     {/* <Link to="/"> */}
-                    <div>
+                    <div className="Explore">
                         <span>Explore</span>
                         <img src="/LandingPage_icons/pinkarrow.svg" alt="Arrow" />
                     </div>
