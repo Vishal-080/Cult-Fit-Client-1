@@ -1,0 +1,112 @@
+#signin-render #cancel {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.562);
+  height: 10px;
+  width: 20px;
+  margin-left: 350px;
+  border: none;
+  font-size: 20px;
+}
+
+#signin-render #page-one-social {
+  width: 262px;
+  height: 40px;
+  background-color: white;
+  display:flex;
+  justify-content: center;
+  padding-top:10px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  border: none;
+  margin-top: 150px;
+  margin-left: 57px;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+
+
+#signin-render #sign-up {
+  width: 162px;
+  height: 20px;
+  margin-left: 107px;
+  margin-top: 25px;
+  display: flex;
+
+  font-family: "Brandon" Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+#signin-render #sign-up button {
+  border: none;
+  background-color: white;
+  color: rgb(250, 87, 115);
+  text-decoration: underline;
+}
+
+/* css for login form begins from here */
+#loginform {
+  width: 90%;
+  height: 240px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+#loginform #logo {
+  width: 60px;
+  height: 85px;
+  margin: 5px auto;
+}
+#loginform input {
+  margin: 20px auto;
+  width: 262px;
+  border: none;
+  border-bottom: 1px solid black;
+  line-height: 30px;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 13px;
+}
+#loginform button {
+  margin: 30px auto;
+  width: 262px;
+  height: 10px;
+  padding: 10px 0px 30px 0px;
+  border: none;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 20px;
+
+  background: #c9c9c9;
+  color: white;
+  border-radius: 100px;
+}
+
+#loginform div {
+  width: 262px;
+  height: 40px;
+  margin: 0px auto;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+#loginform a {
+  color: black;
+}

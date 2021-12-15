@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Navbar} from "./Navbar/Navbar"
 
 import topimg from "./images/topimg.png";
 import offer1 from "./images/offer1.png";
@@ -10,6 +11,7 @@ import timer from "./images/timer.svg";
 export const CultUpper = () => {
   return (
     <div>
+      <Navbar/>
       <Adimg>
         <img src={topimg} alt="topimg" />
       </Adimg>

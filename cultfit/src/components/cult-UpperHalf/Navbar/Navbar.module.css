@@ -1,0 +1,49 @@
+.Navbar{
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px #00000044;
+    position: fixed;
+    top: 0;
+    /* width: 100%; */
+    z-index: 100;
+    padding:0px 36px;
+    width:1440px;
+    font-style: normal;
+    font-weight: 390;
+    /* border:1px solid red; */
+}
+
+.Navbar>div:nth-child(1) {
+  /* margin-right: 20%; */
+}
+
+.Navbar>div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+    line-height: 17px;
+    width:38.61%;
+    /* margin-right: 14.86%; */
+  }
+
+  .Navbar>div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    width:17.36%;
+    line-height: 20px;
+  }
+
+  .Navbar>div:nth-child(3)>div{
+    display: flex;
+  }
+
+  .Navbar>div:nth-child(3)>div p{
+      margin-left:8px;
+  }
