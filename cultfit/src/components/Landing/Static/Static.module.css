@@ -1,0 +1,37 @@
+.staticdata>img{
+    display: block;
+    margin:0px;
+    padding:0px;
+}
+
+.staticdata{
+    margin-top: 100px;
+}
+
+
+.be_better_section .container {
+    min-height: 305px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .be_better_section h2 {
+    width: 472px;
+    font-size: 96px;
+    font-weight: bold;
+    line-height: 133px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #33363F;
+    margin-left: 129px;
+  }
+  
+  .be_better_section h2 span {
+    color: #b2b2b2;
+    font-size: 80px;
+    line-height: 111px;
+    font-weight: bold;
+    color: #908E8E;
+  }
