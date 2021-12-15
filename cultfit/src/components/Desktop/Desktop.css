@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'brandon';
+    src: url("font/font.otf") format("opentype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'brandon', serif;
+}
+
+
+.desktop-container{
+    width: 1200px;
+    margin: auto;
+}
+
+.order-container{
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.flex{
+    display: flex;
+}
+
+.order-title{
+    width: 126px;
+    height: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    align-items: center;
+    color: #000000;
+}
+
+.order-detail-container{
+    margin-top: 36px;
+}
+
+.workOut-img{
+    width: 180px;
+    height: 116px;
+    margin-right: 24px;
+}
+
+.order-detail{
+    width: 69px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #908E8E;
+}
+
+.order-price{
+    width: 26px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.location-container{
+    margin-top: 166px;
+    margin-left: 324px;
+}
+.location-img{
+    margin-top: 18px;
+    height: 21px;
+    margin-right: 59px;
+}
+
+.center-title{
+    font-style: normal;
+    font-weight: 390;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    color: #000000;
+}
+
+.center-details{
+    width: 510px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #908E8E;
+    margin-top: 10px;
+}
+
+.hr-line{
+    width: 588px;
+    height: 1px;
+    background: #C0C0C0;
+    order: 1;
+    margin-top: 20px;
+}
+
+.center-date{
+    margin-top: 40px;
+}
+
+.calender-img{
+    margin-top: 16px;
+    margin-right: 59px;
+}
+
+.MRP-title{
+    width: 30px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #908E8E;
+}
+.MRP-tag{
+    width: 48px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #908E8E;
+    margin-left: 510px;
+}
+
+.center-price{
+    margin-top: 20px;
+}
+
+.Preferred-Center-title{
+    Width:384px;
+    font-family: Brandon Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    align-items: center;
+    color: #333333;
+}
+
+.price-tag{
+    height: 30px;
+    width: 78px;
+    font-family: Brandon Text;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    align-items: center;
+    text-align: right;
+    color: #000000;
+    margin-left: 126px;
+}
+
+.pay-btn{
+    height: 40px;
+    width: 180px;
+    border-radius: 20px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #FF3278 0%, #F74432 100%);
+    color: white;
+    margin-top: 32px;
+    margin-left: 410px;
+}
