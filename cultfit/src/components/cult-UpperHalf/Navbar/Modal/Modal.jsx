@@ -42,7 +42,7 @@ export const ModalInFunctionalComponent = () => {
 
   return val ? (
     <>
-      <button onClick={setModalIsOpenToTrue}>login</button>
+      <button id="login-button" onClick={setModalIsOpenToTrue}>login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
         <button id="cancel" onClick={setModalIsOpenToFalse}>
@@ -73,7 +73,7 @@ export const ModalInFunctionalComponent = () => {
     </>
   ) : social ? (
     <>
-      <button onClick={setModalIsOpenToTrue}>login</button>
+      <button id="login-button" onClick={setModalIsOpenToTrue}>login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
         <button id="cancel" onClick={setModalIsOpenToFalse}>
@@ -84,7 +84,7 @@ export const ModalInFunctionalComponent = () => {
     </>
   ) : (
     <>
-      <button onClick={setModalIsOpenToTrue}>login</button>
+      <button id="login-button" onClick={setModalIsOpenToTrue}>login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
         <button id="cancel" onClick={setModalIsOpenToFalse}>
@@ -92,12 +92,14 @@ export const ModalInFunctionalComponent = () => {
         </button>
         <Signupform />
         <button
+          id="page-one-social"
           onClick={() => {
             setVal(false);
             setSocial(true);
           }}
+          className="social-two"
         >
-          to social page from sign up form
+          Continue with&ensp;<img src={google} alt="google-icon" />&ensp;<img src={fb} alt="fb-icon" />
         </button>
       </Modal>
     </>

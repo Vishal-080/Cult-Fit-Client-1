@@ -9,11 +9,8 @@
     "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
     "react-modal": "^3.14.4",
-=======
     "react-router-dom": "^5.3.0",
->>>>>>> b48e13c90a9e7de42658ea4b14fb33783e976b0d
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"

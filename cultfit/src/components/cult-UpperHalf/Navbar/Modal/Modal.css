@@ -1,3 +1,15 @@
+#login-button {
+  margin-left:8px;
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  border:none;
+  background:white;
+}
+
 #signin-render #cancel {
   background-color: white;
   color: rgba(0, 0, 0, 0.562);
@@ -12,9 +24,9 @@
   width: 262px;
   height: 40px;
   background-color: white;
-  display:flex;
+  display: flex;
   justify-content: center;
-  padding-top:10px;
+  padding-top: 10px;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
@@ -28,8 +40,6 @@
   font-size: 16px;
   line-height: 20px;
 }
-
-
 
 #signin-render #sign-up {
   width: 162px;
@@ -63,7 +73,8 @@
 #loginform #logo {
   width: 60px;
   height: 85px;
-  margin: 5px auto;
+  margin: -20px auto;
+  margin-bottom: 30px;
 }
 #loginform input {
   margin: 20px auto;
@@ -108,5 +119,149 @@
 }
 
 #loginform a {
+  color: black;
+}
+
+/* css for sign-up form begins from here */
+
+#signupform {
+  width: 90%;
+  height: 240px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+#signupform #logo {
+  width: 60px;
+  height: 85px;
+  margin: -20px auto;
+}
+
+#signupform #namebar {
+  width: 282px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#signupform #namebar input {
+  width: 120px;
+  height: 40px;
+
+  margin: 5px auto;
+  border: none;
+  border-bottom: 1px solid black;
+  line-height: 30px;
+
+  font-family: "Brandon" Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 13px;
+  /* padding-top:5px; */
+}
+
+#signupform input {
+  margin: 20px auto;
+  width: 262px;
+  border: none;
+  border-bottom: 1px solid black;
+  line-height: 30px;
+
+  font-family: "Brandon" Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 13px;
+}
+
+#signupform button {
+  margin: 30px auto;
+  width: 262px;
+  height: 10px;
+  padding: 10px 0px 30px 0px;
+  border: none;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 20px;
+  background: linear-gradient(90deg, #ff3278 0%, #f74432 100%);
+  color: white;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+#signupform div {
+  width: 262px;
+  height: 40px;
+  margin: 0px auto;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+#signupform a {
+  color: rgb(252, 105, 130);
+}
+
+#signin-render .social-two {
+  margin-top: 240px !important;
+}
+
+/* social-page CSS starts here */
+
+#social-page {
+  width: 90%;
+  height: 240px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+#social-page #logo {
+  width: 60px;
+  height: 85px;
+  margin: -20px auto;
+  margin-bottom: 25px;
+}
+#social-page button {
+  width: 261px;
+  height: 40px;
+  margin: 25px auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 10px 0px 25px 0px;
+  border: none;
+
+  display: flex;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#social-page button img {
+  margin-left: 18px;
+  margin-right: 12px;
+  margin-top: -2px;
+}
+
+#social-page #buttonone {
+  background: #4385f4;
+  color: white;
+}
+
+#social-page #buttontwo {
+  background: #4267b2;
+  color: white;
+}
+
+#social-page #buttonthree {
+  background: #ffffff;
   color: black;
 }
