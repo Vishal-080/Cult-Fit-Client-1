@@ -3,6 +3,8 @@ import WorkoutImg from './font/yoga.svg';
 import location from './font/location-icon.svg'
 import calender from './font/calender.svg';
 
+import {ModalInFunctionalComponent} from "./Modal/Modal";
+
 const Desktop = () => {
     return (
         <div className='desktop-container'>
@@ -54,7 +56,7 @@ const Desktop = () => {
                         <p className="price-tag">450.00</p>
                     </div>
                     <div>
-                        <button className='pay-btn'>PROCEED TO PAY</button>
+                        <button className='pay-btn'><ModalInFunctionalComponent/></button>
                     </div>
                 </div>
             </div>
