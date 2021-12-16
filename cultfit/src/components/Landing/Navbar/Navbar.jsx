@@ -1,5 +1,6 @@
 import { ModalInFunctionalComponent } from "../../cult-UpperHalf/Navbar/Modal/Modal"
 import styles from "./Navbar.module.css"
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
     return <div className={styles.Navbar}>
@@ -8,8 +9,10 @@ export const Navbar = () => {
         </div>
         <div>
             <div>
-                <img src="/navbar_icons/runicon.svg" alt="" />
-                <p>CULT</p>
+                <Link to="/cult">
+                    <img src="/navbar_icons/runicon.svg" alt="" />
+                    <p>CULT</p>
+                </Link>
             </div>
             <div>
                 <img src="/navbar_icons/Video.svg" alt="" />
@@ -40,7 +43,7 @@ export const Navbar = () => {
             </div>
             <div>
                 <img src="/navbar_icons/usericon.svg" alt="" />
-                <ModalInFunctionalComponent/>
+                <ModalInFunctionalComponent />
             </div>
             <div>
                 <img src="/navbar_icons/shoppingcarticon.svg" alt="" />
