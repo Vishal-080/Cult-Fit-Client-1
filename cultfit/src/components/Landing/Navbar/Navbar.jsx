@@ -1,3 +1,4 @@
+import { ModalInFunctionalComponent } from "../../cult-UpperHalf/Navbar/Modal/Modal"
 import styles from "./Navbar.module.css"
 
 export const Navbar = () => {
@@ -39,7 +40,7 @@ export const Navbar = () => {
             </div>
             <div>
                 <img src="/navbar_icons/usericon.svg" alt="" />
-                <p>Login</p>
+                <ModalInFunctionalComponent/>
             </div>
             <div>
                 <img src="/navbar_icons/shoppingcarticon.svg" alt="" />
