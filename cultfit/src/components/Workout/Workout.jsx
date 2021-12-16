@@ -1,19 +1,27 @@
 import './Workout.css';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useState } from 'react';
 
+const workoutData = {
+    "Yoga":["Yoga","250","/workoutimages/Yoga.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
+    "Badminton":["Badminton Court Access","350","/workoutimages/Badminton.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
+    "Dance Fitness":["Dance Fitness","550","/workoutimages/Dance.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
+    "S&C":["S&C","400","/workoutimages/Gym.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
+    "HRX Workout":["HRX Workout","400","/workoutimages/Hritik.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
+    "Boxing":["Boxing","450","/workoutimages/Boxing.png","Flexibility | Stress reduction | Mental & Emotional Well Being"]
+}
 
 const Workout = () => {
 
     const obj = useParams();
-
-    console.log(obj.session)
+    const [data,setData] = useState(workoutData[obj.session])
 
     return (
         <div className="container">
             <div className="main">
                 <div className="flex">
                     <div className='image-section'>
-                        <img src="/workoutimage/Yoga.svg" alt="work-out" className='workOut-img' />
+                        <img src={data[2]} alt="work-out" className='workOut-img' />
                     </div>
                     <div className='body-section'>
                         <div className="flex">
@@ -26,7 +34,7 @@ const Workout = () => {
                             <p className='link-show'>Workout</p>
                         </div>
                         <div>
-                            <p className='body-title'>Yoga</p>
+                            <p className='body-title'>{data[0]}</p>
                         </div>
                         <div className="flex">
                             <p className='body-title2'>CALORIES</p>
@@ -34,8 +42,8 @@ const Workout = () => {
                         </div>
                         <div className="flex">
                             <div className="flex">
-                                <img src="/workoutimage/fire.svg" alt="work-out" className='fire-img' />
-                                <p className='body-title4'>450</p>
+                                <img src="/workoutimages/fire.svg" alt="work-out" className='fire-img' />
+                                <p className='body-title4'>{data[1]}</p>
                             </div>
                             <div className="spaceBetween flex">
                                 <div className="bar1"></div>
@@ -45,8 +53,8 @@ const Workout = () => {
                         </div>
                         <div>
                             <p className='benefit-title'>BENEFIT</p>
-                            <p className='benefit-desc'>Flexibility | Stress reduction | Mental & Emotional Well Being</p>
-                            <div className='benefit-logo'>Yoga</div>
+                            <p className='benefit-desc'>{data[3]}</p>
+                            <div className='benefit-logo'>{data[0]}</div>
                         </div>
                         <div>
                             <p className='session-title'>A typical YOGA Session</p>
