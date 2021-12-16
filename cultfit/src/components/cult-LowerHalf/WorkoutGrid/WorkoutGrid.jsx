@@ -1,12 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 /******* Styled components ********/
+const WorkoutHeading = styled.div`
+  font-size: 20px;
+  width: 1200px;
+  line-height: 28px;
+  font-weight: bold;
+  margin: 75px auto;
+`;
 
 const Grid = styled.div`
   width: 1200px;
-  margin: auto;
+  margin: 93px auto;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -22,6 +29,7 @@ const GridItem = styled.div`
     position: absolute;
     z-index: 99;
     padding: 19px;
+    width: 15%;
     color: #ffffff;
     font-weight: bold;
     font-size: 20px;
@@ -47,22 +55,29 @@ const workouts = [
   "Dance Fitness",
   "S&C",
   "HRX Workout",
-  "Boxing",
+  "Boxing"
 ];
 
 export const WorkoutGrid = () => {
   const history = useHistory();
   return (
-    <Grid>
-      {workouts.map((el, i) => (
-        <GridItem key={i}>
-          <Link to={`/sessiontype/${el}`}>
+    <>
+      <WorkoutHeading>WORKOUTS</WorkoutHeading>
+      <Grid>
+        {workouts.map((el, i) => (
+          <GridItem key={i}>
             <p>{el}</p>
-            <img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
-          </Link>
-        </GridItem>
-      ))}
-    </Grid>
+            <img
+              onClick={() => {
+                history.push("/");
+              }}
+              src={`/workoutgrid_img/grid${i + 1}.svg`}
+              alt={el}
+            />
+          </GridItem>
+        ))}
+      </Grid>
+    </>
   );
 };
 
