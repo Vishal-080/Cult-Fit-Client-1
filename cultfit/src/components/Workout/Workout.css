@@ -18,11 +18,11 @@
 
 .image-section{
     position: fixed;
-    width: 500px;
+    width: 600px;
     margin-top: 164px;
 }
 .workOut-img{
-    width: 486px;
+    width: 486px;;
     height: 339px;
     left: 0px;
     top: 0px;
@@ -30,7 +30,7 @@
 }
 
 .body-section{
-    width: 500px;
+    width: 600px;
     margin-top: 164px;
     margin-left: 612px;
 }
@@ -124,7 +124,7 @@
     border-bottom-right-radius: 100px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-    background: #9b9b9b;
+    background: black;
 }
 
 .benefit-title{
@@ -143,11 +143,12 @@
     align-items: center;
     color: #000000;
     margin: 20px 0px;
+    font-style: normal;
 }
 
 .benefit-logo{
     height: 30px;
-    width: 62px;
+    width: 70px;
     border-radius: 20px;
     padding: 0px, 12px, 0px, 12px;
     background-color:#997FFF;
@@ -169,13 +170,23 @@
     margin: 20px 0px;
 }
 
-.workout-type{
+.workout-type {
     font-style: normal;
     font-weight: 390;
     font-size: 14px;
     line-height: 19px;
     align-items: center;
     color: #9B9B9B;
+}
+
+.workout-time{
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 19px;
+    align-items: center;
+    color: #9B9B9B;
+    margin-left: 20px;
 }
 
 .time-bar-1{
@@ -241,6 +252,7 @@
 }
 
 .workout-details{
+    font-weight: 420;
     font-size: 14px;
     line-height: 19px;
     align-items: center;
@@ -277,6 +289,7 @@
     line-height: 19px;
     align-items: center;
     color: #333333;
+    font-weight: 420;
 }
 
 .Timings-bar-3{
@@ -307,6 +320,7 @@
     line-height: 19px;
     align-items: center;
     color: #333333;
+    font-weight: 420;
 }
 .Timings-bar-4{
     height: 12px;
@@ -337,6 +351,7 @@
     line-height: 19px;
     align-items: center;
     color: #333333;
+    font-weight: 420;
 }
 
 
@@ -367,7 +382,7 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
-    margin: 40px 0px 0px 82%;
+    margin: 40px 0px 0px 70%;
     color: #FFFFFF;
     border:none;
 }

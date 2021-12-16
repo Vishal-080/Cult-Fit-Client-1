@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
 
 const workoutData = {
-    "Yoga":["Yoga","250","/workoutimages/Yoga.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
-    "Badminton":["Badminton Court Access","350","/workoutimages/Badminton.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
-    "Dance Fitness":["Dance Fitness","550","/workoutimages/Dance.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
-    "S&C":["S&C","400","/workoutimages/Gym.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
-    "HRX Workout":["HRX Workout","400","/workoutimages/Hritik.png","Flexibility | Stress reduction | Mental & Emotional Well Being"],
-    "Boxing":["Boxing","450","/workoutimages/Boxing.png","Flexibility | Stress reduction | Mental & Emotional Well Being"]
+    "Yoga":["Yoga","250","/workoutimages/Yoga.png","Flexibility | Stress reduction | Mental & Emotional Well Being","Yoga","Every class has an array of breathing techniques, a variety of asanas and meditation techniques. Helps in improving confidence & balance while gaining a stronger body in the process."],
+    "Badminton":["Badminton Court Access","350","/workoutimages/Badminton.png","Muscle Gain | Flexibility | Full body strength","Cardio","Simple yet effective cardio and core workout to sweat away those calories while enjoying sports"],
+    "Dance Fitness":["Dance Fitness","550","/workoutimages/Dance.png","Stress reduction | Calorie Burning | Cardiovascular endurance","Cardio","A full body aerobic workout, divided into different genres of music providing peaks and troughs of intensity."],
+    "S&C":["S&C","400","/workoutimages/Gym.png","Strength | Endurance | Mobility | Stamina","Strength","A training methodology that creates stimulus for improved strength & endurance while helping participants build a great physique, improved range of motion and all round functional fitness"],
+    "HRX Workout":["HRX Workout","400","/workoutimages/Hritik.png","Core Strength | Full body strength | Muscle Gain | Mobility","Strength","A combination of primal movements, zero momentum reps & conditioning routines designed to improve muscle endurance and building lasting fitness."],
+    "Boxing":["Boxing","450","/workoutimages/Boxing.png","Fat burn | Learn boxing | Stamina | Core strength","Cardio","Simple yet effective cardio and core workout designed to sweat away those calories, burn fat and learn Boxing at the same time"]
 }
 
 const Workout = () => {
@@ -31,7 +31,7 @@ const Workout = () => {
                             <p className='link-show'> &gt; </p>
                             <p className='link-show'>At Center</p>
                             <p className='link-show'>&gt;</p>
-                            <p className='link-show'>Workout</p>
+                            <p className='link-show' style={{color:"black"}}>Workout</p>
                         </div>
                         <div>
                             <p className='body-title'>{data[0]}</p>
@@ -48,16 +48,16 @@ const Workout = () => {
                             <div className="spaceBetween flex">
                                 <div className="bar1"></div>
                                 <div className="bar2"></div>
-                                <div className="bar3"></div>
+                                <div className="bar3" style={{backgroundColor:obj.session==="Yoga" || obj.session==="HRX Workout"?"#A2A2A2":"black"}}></div>
                             </div>
                         </div>
                         <div>
                             <p className='benefit-title'>BENEFIT</p>
                             <p className='benefit-desc'>{data[3]}</p>
-                            <div className='benefit-logo'>{data[0]}</div>
+                            <div className='benefit-logo'>{data[4]}</div>
                         </div>
                         <div>
-                            <p className='session-title'>A typical YOGA Session</p>
+                            <p className='session-title'>A typical {obj.session.toUpperCase()} Session</p>
                         </div>
 
                         <div className="flex">
@@ -66,6 +66,7 @@ const Workout = () => {
                             <div className="time-bar-2"></div>
                             <div className="time-bar-3"></div>
                             <div className="time-bar-4"></div>
+                            <p className='workout-time'>50min</p>
                         </div>
 
                         <div className="flex">
@@ -113,9 +114,7 @@ const Workout = () => {
                         </div>
                         <div className='hr-line'></div>
                         <div>
-                            <p className='class-details'>Every class has an array of breathing techniques,
-                                a variety of asanas and meditation techniques. Helps in improving confidence &
-                                balance while gaining a stronger body in the process. </p>
+                            <p className='class-details'>{data[5]}</p>
 
                             <button className='book-class-btn'>BOOK CLASS</button>
                         </div>
