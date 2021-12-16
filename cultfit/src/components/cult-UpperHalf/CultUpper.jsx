@@ -26,11 +26,11 @@ export const CultUpper = () => {
         <div className="freetrial">Two Free Trials</div>
         <div className="freeclasses">Experience Cult classes for free</div>
         <div className="tickets">
-          <div className="ind-tickets">
+          <div className="ind-tickets" id="ind-tickets-redeemed">
           <div className="rounded1"></div>
             <div>
             <h1>01</h1>
-            <button>TRY FOR FREE</button>
+            <button>Redeemed</button>
             </div>
             <div className="rounded2"></div>
           </div>
@@ -179,7 +179,7 @@ const Freetrial = styled.div`
     height: 30px;
     text-align: left;
     font-size: 24px;
-    font-family: "Brandon" Text;
+    font-family: Brandon Text;
     font-style: normal;
     font-weight: bold;
     line-height: 30px;
@@ -191,7 +191,7 @@ const Freetrial = styled.div`
     text-align: left;
     color: #a2a2a2;
 
-    font-family: "Brandon" Text;
+    font-family: Brandon Text;
     font-style: normal;
     font-weight: 390;
     font-size: 16px;
@@ -231,8 +231,36 @@ const Freetrial = styled.div`
         background-color:white;
         /* z-index:1; */
     }
-
   }
+
+  #ind-tickets-redeemed {
+      background-color:#a1a1b48f !important;
+      button{
+        color: black;
+        background:transparent;
+      }
+      div{
+        background:transparent;
+      }
+      .rounded1{
+        height: 30px;
+        width: 30px;
+        margin-top:35px;
+        margin-left:-15px;
+        border-radius:15px;
+        background-color:white;
+        /* z-index:1; */
+    }
+    .rounded2{
+        height: 30px;
+        width: 30px;
+        margin-top:35px;
+        margin-right:-15px;
+        border-radius:15px;
+        background-color:white;
+        /* z-index:1; */
+    }
+    }
 
   button {
     width: 169px;
@@ -353,6 +381,7 @@ const Card1 = styled.div`
     background: #ffffff;
     color: #ff3278;
     font-weight: 700;
+    border-radius: 6px;
   }
 `;
 const Card2 = styled.div`
@@ -371,7 +400,7 @@ const Card2 = styled.div`
     margin-left: 54px;
     display: flex;
 
-    font-family: "Brandon" Text;
+    font-family: Brandon Text;
     font-style: normal;
     font-weight: 390;
     font-size: 12px;

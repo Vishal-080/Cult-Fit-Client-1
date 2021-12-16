@@ -1,0 +1,98 @@
+#location-render #select-city {
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 24px;
+  line-height: 40px;
+  color: #000000;
+  margin-left: 30px;
+}
+#location-render #popular {
+  width: 110px;
+  height: 20px;
+  margin-left: 30px;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #908e8e;
+  margin-top: 30px;
+}
+#cities {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-left: 30px;
+
+}
+#cities button {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #ffffff;
+  margin-right: 30px;
+  border: none;
+
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  
+
+  color: #908e8e;
+}
+#cities button div{
+    margin:10px auto;
+}
+#cities button:hover{
+    color:rgb(223, 105, 125);
+}
+
+#other {
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 420;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 30px;
+  color: #908e8e;
+  margin-left: 30px;
+
+}
+
+#morecities{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top:30px;
+}
+
+ul{
+    list-style: none;
+    margin-right: 65px;
+}
+
+li {
+  font-family: Brandon Text;
+  font-style: normal;
+  font-weight: 390;
+  font-size: 16px;
+  line-height: 20px;
+  line-height: 35px;
+  cursor: pointer;
+  margin-top:7px;
+
+  color: #000000;
+}
+li:hover{
+    color:rgb(230, 100, 122);
+}
+
