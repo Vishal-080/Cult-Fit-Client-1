@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 /******* Styled components ********/
 
@@ -22,7 +22,6 @@ const GridItem = styled.div`
     position: absolute;
     z-index: 99;
     padding: 19px;
-    width: 15%;
     color: #ffffff;
     font-weight: bold;
     font-size: 20px;
@@ -57,15 +56,10 @@ export const WorkoutGrid = () => {
     <Grid>
       {workouts.map((el, i) => (
         <GridItem key={i}>
-          <p>{el}</p>
-          {/* <img src="/workoutgrid_img/grid1.svg" alt={el} /> */}
-          <img
-            onClick={() => {
-              history.push("/");
-            }}
-            src={`/workoutgrid_img/grid${i + 1}.svg`}
-            alt={el}
-          />
+          <Link to={`/sessiontype/${el}`}>
+            <p>{el}</p>
+            <img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
+          </Link>
         </GridItem>
       ))}
     </Grid>

@@ -31,6 +31,16 @@
     /* margin-right: 14.86%; */
   }
 
+  .Navbar>div:nth-child(2) a{
+    text-decoration: none;
+    color:black;
+  }
+
+  .Navbar>div:nth-child(2)>div:hover{
+    filter:invert(75%) sepia(0) saturate(0) hue-rotate(243deg) brightness(63%) contrast(86%)
+  }
+
+
   .Navbar>div:nth-child(3) {
     display: flex;
     align-items: center;

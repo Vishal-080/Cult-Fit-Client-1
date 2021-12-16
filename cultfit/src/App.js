@@ -1,16 +1,13 @@
 import './App.css';
-import WorkoutGrid from './components/cult-LowerHalf/WorkoutGrid/WorkoutGrid';
-import { LandingPage } from './components/Landing/Landing';
-
-import { CultUpper } from './components/cult-UpperHalf/CultUpper';
+import { Navbar } from './components/Landing/Navbar/Navbar';
+import { Allroutes } from './Pages/Routes';
 
 
 function App() {
   return (
     <div className="App">
-      <LandingPage/>
-      <CultUpper/>
-      <WorkoutGrid/>
+        <Navbar/>
+      <Allroutes/>
     </div>
   );
 }

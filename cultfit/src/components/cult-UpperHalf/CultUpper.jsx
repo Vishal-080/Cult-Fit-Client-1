@@ -11,7 +11,6 @@ import timer from "./images/timer.svg";
 export const CultUpper = () => {
   return (
     <div>
-      <Navbar/>
       <Adimg>
         <img src={topimg} alt="topimg" />
       </Adimg>
@@ -212,7 +211,7 @@ const Freetrial = styled.div`
     width: 282px;
     height: 100px;
     background-color:#414152;
-
+    text-align:center;
     .rounded1{
         height: 30px;
         width: 30px;

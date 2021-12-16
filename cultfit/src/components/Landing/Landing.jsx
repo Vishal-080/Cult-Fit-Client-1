@@ -18,7 +18,6 @@ export const LandingPage = () => {
 
     return (
         <>
-            <Navbar />
             <Intro />
             {sliding?.map((e) => (
                 <SliderCardHomePAge key={e._id} {...e} />

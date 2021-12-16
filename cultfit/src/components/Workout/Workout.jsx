@@ -1,13 +1,19 @@
 import './Workout.css';
-import WorkoutImg from './image/unsplash_t1NEMSm1rgI.svg';
-import fire from './image/fire.svg';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+
+
 const Workout = () => {
+
+    const obj = useParams();
+
+    console.log(obj.session)
+
     return (
         <div className="container">
             <div className="main">
                 <div className="flex">
                     <div className='image-section'>
-                        <img src={WorkoutImg} alt="work-out" className='workOut-img' />
+                        <img src="/workoutimage/Yoga.svg" alt="work-out" className='workOut-img' />
                     </div>
                     <div className='body-section'>
                         <div className="flex">
@@ -28,7 +34,7 @@ const Workout = () => {
                         </div>
                         <div className="flex">
                             <div className="flex">
-                                <img src={fire} alt="work-out" className='fire-img' />
+                                <img src="/workoutimage/fire.svg" alt="work-out" className='fire-img' />
                                 <p className='body-title4'>450</p>
                             </div>
                             <div className="spaceBetween flex">
