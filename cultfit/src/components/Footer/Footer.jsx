@@ -1,4 +1,4 @@
-import './footer.css';
+import './Footer.css';
 import logo from './images/cult-logo-white SVG.svg'
 import storeLogo from './images/Frame 4.svg'
 import socialLogo from './images/social-logo.svg'
