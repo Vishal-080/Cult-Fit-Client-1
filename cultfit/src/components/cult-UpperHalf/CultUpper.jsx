@@ -6,11 +6,16 @@ import tag from "./images/tag.svg";
 import forward from "./images/forward.svg";
 import timer from "./images/timer.svg";
 
+import topimgsmall from "./images/topimgsmall.svg";
+
 export const CultUpper = () => {
   return (
     <div>
       <Adimg>
-        <img src={topimg} alt="topimg" />
+        <picture>
+          <source media="(max-width: 400px)" srcset={topimgsmall} />
+          <img src={topimg} alt="topimg" />
+        </picture>{" "}
       </Adimg>
       <Offerimg>
         <img src={offer1} alt="offerimg" />
@@ -24,18 +29,18 @@ export const CultUpper = () => {
         <div className="freeclasses">Experience Cult classes for free</div>
         <div className="tickets">
           <div className="ind-tickets" id="ind-tickets-redeemed">
-          <div className="rounded1"></div>
+            <div className="rounded1"></div>
             <div>
-            <h1>01</h1>
-            <button>Redeemed</button>
+              <h1>01</h1>
+              <button>Redeemed</button>
             </div>
             <div className="rounded2"></div>
           </div>
           <div className="ind-tickets">
-          <div className="rounded1"></div>
+            <div className="rounded1"></div>
             <div>
-            <h1>02</h1>
-            <button>TRY FOR FREE</button>
+              <h1>02</h1>
+              <button>TRY FOR FREE</button>
             </div>
             <div className="rounded2"></div>
           </div>
@@ -128,6 +133,17 @@ const Adimg = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 65px;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    height: 300px;
+    margin-top: 65px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 //2. offer(extra 1 month extension)
 const Offerimg = styled.div`
@@ -139,6 +155,18 @@ const Offerimg = styled.div`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 80%;
+    height: 30px;
+    margin: 32px auto;
+    margin-bottom: 0px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 //3.timer divison
@@ -161,6 +189,25 @@ const Saletimer = styled.div`
     height: 47px;
     margin-top: 25px;
     margin-left: 450px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+    height: 50px;
+    margin: 0px auto;
+    background-color: #ececec;
+
+    display: flex;
+
+    #img-one {
+      width: 110px;
+      height: 40px;
+      margin-top: 5.5px;
+      margin-left: 85px;
+    }
+    #img-two {
+      display: none;
+    }
   }
 `;
 //4.free-trial div(till tickets)
@@ -198,66 +245,65 @@ const Freetrial = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    color:white;
+    color: white;
 
-    .ind-tickets{
-        display:flex;
+    .ind-tickets {
+      display: flex;
     }
-
   }
   .tickets div {
     width: 282px;
     height: 100px;
-    background-color:#414152;
-    text-align:center;
-    .rounded1{
-        height: 30px;
-        width: 30px;
-        margin-top:35px;
-        margin-left:-15px;
-        border-radius:15px;
-        background-color:white;
-        /* z-index:1; */
+    background-color: #414152;
+    text-align: center;
+    .rounded1 {
+      height: 30px;
+      width: 30px;
+      margin-top: 35px;
+      margin-left: -15px;
+      border-radius: 15px;
+      background-color: white;
+      /* z-index:1; */
     }
-    .rounded2{
-        height: 30px;
-        width: 30px;
-        margin-top:35px;
-        margin-right:-15px;
-        border-radius:15px;
-        background-color:white;
-        /* z-index:1; */
+    .rounded2 {
+      height: 30px;
+      width: 30px;
+      margin-top: 35px;
+      margin-right: -15px;
+      border-radius: 15px;
+      background-color: white;
+      /* z-index:1; */
     }
   }
 
   #ind-tickets-redeemed {
-      background-color:#a1a1b48f !important;
-      button{
-        color: black;
-        background:transparent;
-      }
-      div{
-        background:transparent;
-      }
-      .rounded1{
-        height: 30px;
-        width: 30px;
-        margin-top:35px;
-        margin-left:-15px;
-        border-radius:15px;
-        background-color:white;
-        /* z-index:1; */
+    background-color: #a1a1b48f !important;
+    button {
+      color: black;
+      background: transparent;
     }
-    .rounded2{
-        height: 30px;
-        width: 30px;
-        margin-top:35px;
-        margin-right:-15px;
-        border-radius:15px;
-        background-color:white;
-        /* z-index:1; */
+    div {
+      background: transparent;
     }
+    .rounded1 {
+      height: 30px;
+      width: 30px;
+      margin-top: 35px;
+      margin-left: -15px;
+      border-radius: 15px;
+      background-color: white;
+      /* z-index:1; */
     }
+    .rounded2 {
+      height: 30px;
+      width: 30px;
+      margin-top: 35px;
+      margin-right: -15px;
+      border-radius: 15px;
+      background-color: white;
+      /* z-index:1; */
+    }
+  }
 
   button {
     width: 169px;
@@ -272,6 +318,39 @@ const Freetrial = styled.div`
     font-weight: bold;
     font-size: 18px;
     line-height: 30px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+    height: inherit;
+    margin: 32px auto;
+
+    .freeclasses {
+      margin-top: 8px;
+      text-align: left;
+      color: #a2a2a2;
+      margin-bottom: 0px;
+
+      font-family: Brandon Text;
+      font-style: normal;
+      font-weight: 390;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .tickets {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 0px;
+      color: white;
+
+      .ind-tickets {
+        width: 100%;
+        display: flex;
+        margin-top: 12px;
+      }
+    }
   }
 `;
 
@@ -294,6 +373,29 @@ const VideoContainer = styled.div`
     margin-top: 23px;
     width: 100%;
     height: 100%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 80%;
+    height: inherit;
+    margin: 32px auto;
+
+    .tag {
+      width:100%
+      text-align: left;
+      margin-left:0px;
+
+      font-family: Brandon Text;
+      font-style: normal;
+      font-weight: 420;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    img {
+    margin-top: 2px ;
+    width: 100%;
+    height: 130px;
+  }
   }
 `;
 
@@ -352,6 +454,70 @@ const Elite = styled.div`
     width: 1200px;
     margin: 0px auto;
   }
+
+  @media screen and (max-width: 400px) {
+    height: inherit;
+    width: 100%;
+    background-color: #888e9e;
+    margin-top: 53px;
+
+    .pass {
+      width: 80%;
+      margin: 0px auto;
+      padding-top: 20px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .tag-two {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: -30px;
+      }
+
+      .line {
+        width: 23px;
+        height: 2px;
+        margin-top: 10px;
+        border-radius: 1px;
+        background-color: #ffffff;
+      }
+    }
+    .pass * {
+      margin-top: 20px;
+    }
+
+    .types {
+      color: #ffffff;
+      width: 80%;
+      height: 22px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .types * {
+      font-family: Brandon Text;
+      font-style: normal;
+      font-weight: 390;
+      font-size: 12px;
+      line-height: 20px;
+
+      flex: 2 1 40%;
+      margin: 5px;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: 0px auto;
+    }
+    .cards > div {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  }
 `;
 
 const Card1 = styled.div`
@@ -380,6 +546,10 @@ const Card1 = styled.div`
     font-weight: 700;
     border-radius: 6px;
   }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
 `;
 const Card2 = styled.div`
   width: 384px;
@@ -403,12 +573,28 @@ const Card2 = styled.div`
     font-size: 12px;
     line-height: 20px;
 
-    img{
-      position:static !important;
-      width:15px;
-      height:15px;
+    img {
+      position: static !important;
+      width: 15px;
+      height: 15px;
       margin-top: 2px;
-      margin-right:9.41px;
+      margin-right: 9.41px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+
+    .element {
+      width: 80%;
+      height: 15px;
+      margin-left: 45px;
+
+      font-family: Brandon Text;
+      font-style: normal;
+      font-weight: 390;
+      font-size: 8px;
+      line-height: 20px;
     }
   }
 `;
