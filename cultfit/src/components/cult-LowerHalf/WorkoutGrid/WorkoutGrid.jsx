@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /******* Styled components ********/
 const WorkoutHeading = styled.div`
@@ -59,21 +59,16 @@ const workouts = [
 ];
 
 export const WorkoutGrid = () => {
-  const history = useHistory();
   return (
     <>
       <WorkoutHeading>WORKOUTS</WorkoutHeading>
       <Grid>
         {workouts.map((el, i) => (
           <GridItem key={i}>
-            <p>{el}</p>
-            <img
-              onClick={() => {
-                history.push("/");
-              }}
-              src={`/workoutgrid_img/grid${i + 1}.svg`}
-              alt={el}
-            />
+            <Link to={`/sessiontype/${el}`}>
+              <p>{el}</p>
+              <img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
+            </Link>
           </GridItem>
         ))}
       </Grid>
