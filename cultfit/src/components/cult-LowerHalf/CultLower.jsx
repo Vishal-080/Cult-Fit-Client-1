@@ -1,7 +1,8 @@
-import WorkoutGrid from "./WorkoutGrid";
-import QuickLinks from "./QuickLinks";
-import BeSpirited from "./BeSpirited";
-import FAQ from "./FAQ";
+import WorkoutGrid from "./WorkoutGrid/WorkoutGrid";
+import QuickLinks from "./QuickLinks/QuickLinks";
+import BeSpirited from "./BeSpirited/BeSpirited";
+import FAQ from "./FAQ/FAQ";
+import Footer from "../Footer/Footer";
 // import Footer2 from "./Footer2";
 
 export const CultLower = () => {
@@ -11,7 +12,7 @@ export const CultLower = () => {
       <QuickLinks />
       <BeSpirited />
       <FAQ />
-      {/* <Footer2 /> */}
+      <Footer/>
     </>
   );
 };
