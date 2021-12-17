@@ -56,6 +56,10 @@
     color:rgb(223, 105, 125);
 }
 
+#cities button img{
+  mix-blend-mode: luminosity;
+}
+
 #other {
   font-family: Brandon Text;
   font-style: normal;
