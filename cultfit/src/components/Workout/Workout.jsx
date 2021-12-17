@@ -151,7 +151,7 @@ const Workout = () => {
                     <div className="modal-body">
                         <div className="desktop-container">
                             <div className="left-container">
-                                <input type="text" placeholder='Search for centres' />
+                                <input type="text" placeholder='Search for centres'  />
                                 <div>
                                     {centres.map((e) => (
                                         <div className="centrediv">
