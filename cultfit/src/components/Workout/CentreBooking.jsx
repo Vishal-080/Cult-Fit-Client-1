@@ -12,6 +12,7 @@ export const CentreBooking = () => {
 
     const [centre, setCentre] = useState({})
     const [date, setDate] = useState("2021-12-19")
+    const [time,setTime] = useState("")
     const [availableSlots, setAvailableslots] = useState([])
     const [bookingModal, setbookingModal] = useState(false)
     const [sessionBookModal, setsessionBookModal] = useState(false)
@@ -25,23 +26,6 @@ export const CentreBooking = () => {
     useEffect(() => {
         fetchSlots()
     }, [date])
-
-
-
-    // const locationChange = () => {
-    //     axios
-    //         .get(`http://localhost:7765/cities/centres/${location}`, { withCredentials: true })
-    //         .then(res => {
-    //             console.log("data", res.data[0])
-    //             setCentre(res.data[0])
-    //         })
-    //         .catch(err => {
-    //             console.log("Not properly authenticated!");
-    //             console.log("Error", err);
-    //         })
-    // }
-
-
 
     const fetchCenter = () => {
         axios
@@ -124,7 +108,10 @@ export const CentreBooking = () => {
                             {availableSlots.map((e) => {
                                 return <div>
                                     <p>{e}</p>
-                                    <button onClick={() => setbookingModal(true)}>{sessiontype.toUpperCase()}</button>
+                                    <button onClick={() => {
+                                        setbookingModal(true)
+                                        setTime(e)
+                                        }}>{sessiontype.toUpperCase()}</button>
                                 </div>
                             })}
                         </div>
@@ -142,9 +129,9 @@ export const CentreBooking = () => {
                     <div className={styles.modalbody}>
                         <div className={styles.desktopcontainer}>
                             <div>
-                                <p>Yoga</p>
-                                <p>Date</p>
-                                <p>Date</p>
+                                <p>{sessiontype}</p>
+                                <p>{time}, &nbsp;  {date}</p>
+                                <p>{centre.address}</p>
                             </div>
                             <p className={styles.kit}>Bring Your Own Kit (4 items)</p>
                             <div className={styles.lowercontainer}>

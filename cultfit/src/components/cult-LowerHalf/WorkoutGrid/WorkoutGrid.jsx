@@ -91,9 +91,3 @@ export const WorkoutGrid = () => {
 };
 
 export default WorkoutGrid;
-
-
-{/* <Link to={`/sessiontype/${el}`}>
-<p>{el}</p>
-<img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
-</Link> */}
