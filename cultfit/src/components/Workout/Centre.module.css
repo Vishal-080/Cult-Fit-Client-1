@@ -99,6 +99,13 @@
     line-height: 17px;
     color: #36BA45;
     background-color: white;
+    transition: all 0.3s ease;
+}
+
+.slotsDiv button:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    transform: translateY(-7px);
+
 }
 
 .linkshow{
@@ -455,7 +462,7 @@
 
 
 /* modal */
-.modal {
+.modal{
     /* display: none; */
     position: fixed;
     z-index: 300;
@@ -467,33 +474,60 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    
 }
 
-.modal-content {
+.bookmodal{
+    position: fixed;
+    z-index: 300;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modalcontent {
     background-color: white;
-    margin: 2% auto;
-    padding: 20px;
-    width:83%;
+    margin: 4% auto;
+    width:28%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
     animation-name: modalopen;
     animation-duration: 1s;
-    border:1px solid red;
+    padding:10px;
+    border-radius: 10px;
 }
 
-.modal-header{
+.bookmodalcontent {
+    background: linear-gradient(180deg, #9E7EF8 0%, #4CBCFB 13.21%, #5BF7FF 34.05%, #FFFFFF 68.64%);
+    margin: 4% auto;
+    width:28%;
+    box-shadow: 0px 4px 24px 2px rgba(0, 0, 0, 0.08);
+    animation-name: modalopen;
+    animation-duration: 1s;
+    padding:44px 96px;
+    text-align: center;
+}
+
+.modalheader{
     display: flex;
     padding: 15px;
     justify-content: space-between;
-    border:1px solid red;
 }
 
-.modal-title{
-    font-size: 36px;
-    line-height: 1.17;
-    color: #000;
+.modaltitle{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
 }
 
-#closeBtn {
+.closeBtn {
     /* position: absolute; */
     color: #ccc;
     /* top: 5px;
@@ -504,49 +538,49 @@
     text-shadow: 0 1px 0 #fff;
 }
 
-#closeBtn:hover,
-#closeBtn:focus {
+.closeBtn:hover,
+.closeBtn:focus {
     color: rgb(95, 90, 90);
     text-decoration: none;
     cursor: pointer;
 }
 
 .blur {
-    filter: blur(1px);
+    filter: blur(2px);
 }
 
 
-.modal-content img {
+/* .modalcontent img {
     width: 100%;
     margin-bottom: 20px;
-}
+} */
 
-.modal-content button {
-    background-color: black;
-    margin: auto;
-    font-size: 20px;
-    padding: 10px 60px;
-    border: none;
-    border-radius: 5px;
-}
 
-.modal-content a {
+.modalcontent a {
     color: white;
     text-decoration: none;
 }
 
-.modal-content p {
-    width: 78%;
-    margin: auto;
+.lowercontainer>div>p{
+    height: 40px;
+    width: 53px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
 }
 
-.modal-content hr,
-.modal-content h1,
-.modal-content h3,
-.modal-content p {
-    margin-bottom: 10px;
+.lowercontainer>div{
+    margin-right: 40px;
 }
 
+.lowercontainer{
+    display: flex;
+    border-bottom: 3px solid #EFEFEF;
+    padding-bottom: 20px;
+}
 
 @keyframes modalopen {
     from {
@@ -558,8 +592,34 @@
     }
 }
 
-.desktop-container{
-    display: flex;
+.desktopcontainer{
+    margin-left: 15px;
+}
+
+.desktopcontainer>div:nth-child(1) p{
+    font-style: normal;
+    font-weight: 420;
+    font-size: 16px;
+    line-height: 20px;
+    color: #888E9E;
+    margin-bottom: 20px;
+    
+}
+
+.desktopcontainer>div:nth-child(1){
+    border-bottom: 3px solid #EFEFEF;
+}
+
+.desktopcontainer>div:nth-child(2){
+    margin-top: 20px;
+}
+
+.kit{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 20px 0px;
 }
 
 .left-container{
@@ -596,4 +656,76 @@
 
 .right-container>img{
     width:100%;
+}
+
+.bookbtn{
+    margin-top:21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookbtn>button{
+    padding: 10px 24px;
+    background: linear-gradient(90deg, #FF3278 0%, #F74432 100%);
+    border-radius: 23px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    margin-bottom:5px;
+}
+
+.classbooked{
+    margin:26px 0px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.classDetails{
+    font-style: normal;
+    font-weight: 420;
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+    margin-bottom: 26px;
+}
+
+.downloadline{
+    margin: 28px 0px;
+    font-style: normal;
+    font-weight: 420;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.storeimages{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.storeimages>img:nth-child(1){
+    margin-right: 18px;
+}
+
+.okbtn{
+    padding: 14px 142px;
+    background: #F4F4FE;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 24px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 26px 0px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
 }
