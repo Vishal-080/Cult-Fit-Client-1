@@ -404,9 +404,11 @@ const Card2 = styled.div`
     line-height: 20px;
 
     img{
+      position:static !important;
       width:15px;
       height:15px;
       margin-top: 2px;
+      margin-right:9.41px;
     }
   }
 `;

@@ -22,9 +22,8 @@ const Workout = () => {
 
     const fetchCenters = () => {
         axios
-            .get(`http://localhost:7765/cities/centres/Mumbai`, { withCredentials: true })
+            .get(`http://localhost:7765/cities/centres/Bangalore`, { withCredentials: true })
             .then(res => {
-                console.log("data", res.data)
                 setCentres(res.data)
             })
             .catch(err => {
@@ -159,7 +158,7 @@ const Workout = () => {
                                                 <h3>{e.centrename}</h3>
                                                 <p>{e.address}</p>
                                             </div>
-                                            <Link to={`/centrebooking/${e}`}>
+                                            <Link to={`/centrebooking/${e._id}`}>
                                                 <div>
                                                     <p>SELECT</p>
                                                 </div>
