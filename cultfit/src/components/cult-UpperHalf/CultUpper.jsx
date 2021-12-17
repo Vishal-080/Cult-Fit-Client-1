@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import {Navbar} from "./Navbar/Navbar"
-
 import topimg from "./images/topimg.png";
 import offer1 from "./images/offer1.png";
 import vidimg from "./images/vidimg.svg";

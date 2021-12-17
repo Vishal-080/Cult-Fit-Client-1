@@ -1,20 +1,36 @@
 import './Workout.css';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
+import axios from 'axios';
 
 const workoutData = {
-    "Yoga":["Yoga","250","/workoutimages/Yoga.png","Flexibility | Stress reduction | Mental & Emotional Well Being","Yoga","Every class has an array of breathing techniques, a variety of asanas and meditation techniques. Helps in improving confidence & balance while gaining a stronger body in the process."],
-    "Badminton":["Badminton Court Access","350","/workoutimages/Badminton.png","Muscle Gain | Flexibility | Full body strength","Cardio","Simple yet effective cardio and core workout to sweat away those calories while enjoying sports"],
-    "Dance Fitness":["Dance Fitness","550","/workoutimages/Dance.png","Stress reduction | Calorie Burning | Cardiovascular endurance","Cardio","A full body aerobic workout, divided into different genres of music providing peaks and troughs of intensity."],
-    "S&C":["S&C","400","/workoutimages/Gym.png","Strength | Endurance | Mobility | Stamina","Strength","A training methodology that creates stimulus for improved strength & endurance while helping participants build a great physique, improved range of motion and all round functional fitness"],
-    "HRX Workout":["HRX Workout","400","/workoutimages/Hritik.png","Core Strength | Full body strength | Muscle Gain | Mobility","Strength","A combination of primal movements, zero momentum reps & conditioning routines designed to improve muscle endurance and building lasting fitness."],
-    "Boxing":["Boxing","450","/workoutimages/Boxing.png","Fat burn | Learn boxing | Stamina | Core strength","Cardio","Simple yet effective cardio and core workout designed to sweat away those calories, burn fat and learn Boxing at the same time"]
+    "Yoga": ["Yoga", "250", "/workoutimages/Yoga.png", "Flexibility | Stress reduction | Mental & Emotional Well Being", "Yoga", "Every class has an array of breathing techniques, a variety of asanas and meditation techniques. Helps in improving confidence & balance while gaining a stronger body in the process."],
+    "Badminton": ["Badminton Court Access", "350", "/workoutimages/Badminton.png", "Muscle Gain | Flexibility | Full body strength", "Cardio", "Simple yet effective cardio and core workout to sweat away those calories while enjoying sports"],
+    "Dance Fitness": ["Dance Fitness", "550", "/workoutimages/Dance.png", "Stress reduction | Calorie Burning | Cardiovascular endurance", "Cardio", "A full body aerobic workout, divided into different genres of music providing peaks and troughs of intensity."],
+    "S&C": ["S&C", "400", "/workoutimages/Gym.png", "Strength | Endurance | Mobility | Stamina", "Strength", "A training methodology that creates stimulus for improved strength & endurance while helping participants build a great physique, improved range of motion and all round functional fitness"],
+    "HRX Workout": ["HRX Workout", "400", "/workoutimages/Hritik.png", "Core Strength | Full body strength | Muscle Gain | Mobility", "Strength", "A combination of primal movements, zero momentum reps & conditioning routines designed to improve muscle endurance and building lasting fitness."],
+    "Boxing": ["Boxing", "450", "/workoutimages/Boxing.png", "Fat burn | Learn boxing | Stamina | Core strength", "Cardio", "Simple yet effective cardio and core workout designed to sweat away those calories, burn fat and learn Boxing at the same time"]
 }
 
 const Workout = () => {
 
     const obj = useParams();
-    const [data,setData] = useState(workoutData[obj.session])
+    const [data, setData] = useState(workoutData[obj.session])
+    const [modal, setModal] = useState(false)
+    const [centres, setCentres] = useState([])
+
+    const fetchCenters = () => {
+        axios
+            .get(`http://localhost:7765/cities/centres/Mumbai`, { withCredentials: true })
+            .then(res => {
+                console.log("data", res.data)
+                setCentres(res.data)
+            })
+            .catch(err => {
+                console.log("Not properly authenticated!");
+                console.log("Error", err);
+            })
+    }
 
     return (
         <div className="container">
@@ -31,7 +47,7 @@ const Workout = () => {
                             <p className='link-show'> &gt; </p>
                             <p className='link-show'>At Center</p>
                             <p className='link-show'>&gt;</p>
-                            <p className='link-show' style={{color:"black"}}>Workout</p>
+                            <p className='link-show' style={{ color: "black" }}>Workout</p>
                         </div>
                         <div>
                             <p className='body-title'>{data[0]}</p>
@@ -48,7 +64,7 @@ const Workout = () => {
                             <div className="spaceBetween flex">
                                 <div className="bar1"></div>
                                 <div className="bar2"></div>
-                                <div className="bar3" style={{backgroundColor:obj.session==="Yoga" || obj.session==="HRX Workout"?"#A2A2A2":"black"}}></div>
+                                <div className="bar3" style={{ backgroundColor: obj.session === "Yoga" || obj.session === "HRX Workout" ? "#A2A2A2" : "black" }}></div>
                             </div>
                         </div>
                         <div>
@@ -116,7 +132,42 @@ const Workout = () => {
                         <div>
                             <p className='class-details'>{data[5]}</p>
 
-                            <button className='book-class-btn'>BOOK CLASS</button>
+                            <button className='book-class-btn' onClick={() => {
+                                setModal(true)
+                                fetchCenters()
+                            }}>BOOK CLASS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="modal" style={{ display: modal ? "block" : "none" }}>
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h4 className="modal-title">Select A Center</h4>
+                        <span onClick={() => setModal(false)} id="closeBtn">&times;</span>
+                    </div>
+                    <div className="modal-body">
+                        <div className="desktop-container">
+                            <div className="left-container">
+                                <input type="text" placeholder='Search for centres' />
+                                <div>
+                                    {centres.map((e) => (
+                                        <div className="centrediv">
+                                            <div className="centredetails">
+                                                <h3>{e.centrename}</h3>
+                                                <p>{e.address}</p>
+                                            </div>
+                                            <div>
+                                                <p>SELECT</p>
+                                            </div>
+
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="right-container">
+                                <img src="/workoutimages/delhi.svg" alt=""/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,3 +177,4 @@ const Workout = () => {
 }
 
 export default Workout
+
