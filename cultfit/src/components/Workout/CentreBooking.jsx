@@ -52,19 +52,28 @@ export const CentreBooking = () => {
                         <div className={styles.flex}>
                             <div className={styles.dateDiv}>
                                 <p>SUN</p>
-                                <div>19</div>
+                                <div>
+                                    <h3>19</h3>
+                                </div>
+                                
                             </div>
                             <div className={styles.dateDiv}>
                                 <p>MON</p>
-                                <div>20</div>
+                                <div>
+                                    <h3>20</h3>
+                                </div>
                             </div>
                             <div className={styles.dateDiv}>
                                 <p>TUE</p>
-                                <div>21</div>
+                                <div>
+                                    <h3>21</h3>
+                                </div>
                             </div>
                             <div className={styles.dateDiv}>
                                 <p>WED</p>
-                                <div>22</div>
+                                <div>
+                                    <h3>22</h3>
+                                </div>
                             </div>
                         </div>
 

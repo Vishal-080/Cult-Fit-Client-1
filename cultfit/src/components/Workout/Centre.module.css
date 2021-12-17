@@ -48,13 +48,10 @@
     margin-left: 5px;
 }
 
-.bodysection>div:nth-child(3){
-    
-}
-
 .dateDiv{
     margin-right: 32px;
     text-align: center;
+    color: #A2A2A2;
 }
 
 .dateDiv>p{
@@ -62,15 +59,17 @@
     font-weight: 390;
     font-size: 12px;
     line-height: 17px;
-    width: 46px;
-    height: 33px;
+    margin-bottom: 8px;
 }
 
 .dateDiv>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
-    background: #FF3278;
     border-radius: 100px;
+    margin-left: 5px;
 }
 
 .linkshow{
