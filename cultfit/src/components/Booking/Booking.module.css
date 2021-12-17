@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'brandon';
+    src: url("image/font.otf") format("opentype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'brandon', serif;
+}
+
+.bookingContainer{
+    width: 1200px;
+    margin: auto;
+    background-color: "#FFFFF";
+}
+
+.flex{
+    display: flex;
+}
+
+.workoutImage{
+    width: 588px;
+    height: 570px;
+    margin-top: 58px;
+    left: 0px;
+    top: 0px;
+    order: 0;
+    position: sticky;
+    vertical-align: middle;
+}
+
+
+.linksContainer{
+    margin-left: 100px;
+    margin-top: 81px;
+}
+
+.links{
+    margin-right: 10.56px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 13px;
+    line-height: 20px;
+    align-items: center;
+    color: #000000;
+}
+
+.yogaTitles{
+    width: 179px;
+    height: 40px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 40px;
+    color: #000000;
+    align-items: center;
+    margin-top: 55px;
+    margin-left: 100px; 
+    margin-right: 250px;
+    margin-bottom: 8px;
+}
+
+.yogaDuration{
+    width: 69px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    color: #A2A2A2;
+    margin-left: 100px;
+}
+
+.yogaDate{
+    width: 185px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 420;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-left: 100px;
+    color: #333333;
+}
+
+.eclipseDiv{
+    margin-top: 57px;
+}
+
+.eclipse{
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+}
+
+.cancelDiv{
+    margin-top: 110px;
+    margin-left: 100px;
+}
+
+.cancelImage{
+    width: 22.5px;
+    height: 22.5px;
+}
+
+.cancelTitle{
+    width: 130px;
+    height: 20px;
+    font-style: normal;
+    font-weight: 420;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+    margin-left: 32px;
+}
+
+.kitDiv{
+    margin-top: 27px;
+    margin-left: 100px;
+}
+
+.kitTitle{
+    width: 301px;
+    height: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 27px;
+}
+
+.kitBox{
+    width: 64px;
+    height: 110px;
+    margin-right: 45px;
+    align-items: center;
+    justify-content: center;
+}
+
+.matImage{
+    height: 66.27729034423828px;
+    width: 74.26512145996094px;
+    margin-bottom: 4px;
+}
+
+.kitName{
+    height: 40px;
+    width: 53px;
+    font-family: Brandon Text;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #333333;
+    margin-left: 12px;
+}
+
+.saftyDiv{
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.saftyTitle{
+    width: 182px;
+    height: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.saftyBox{
+    padding: 16px 18px;
+    width: 214px;
+    height: 62px;
+    background: #FFEDDF;
+    border-radius: 8px;
+    margin-right: 55px;
+    margin-top: 30px;
+}
+
+.saftyBox2{
+    padding: 16px 18px;
+    width: 214px;
+    height: 62px;
+    background: #FFEDDF;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+
+.alarmImage{
+    width: 30px;    
+    height: 30px;
+    margin: 16px 18px 16px 18px;
+}
+
+.alarmTitle{
+    width: 82px;
+    height: 30px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 12px;
+    line-height: 17px;
+    align-items: center;
+    align-items: center;
+    color: #000000;
+    margin-top: 16px;
+}
+
+.alarmArrow{
+    height: 7.808238983154304px;
+    width: 13.176996231079114px;    
+    font-size: 20px;
+    font-weight: 550;
+    color: #FF3278;
+    margin-top: 16px;
+    margin-left: 28px;
+}
+
+.hrLine{
+    margin-top: 50px;
+    margin-left: 100px;
+    height: 0px;
+    width: 486px;
+    left: 0px;
+    top: 0px;
+    border-radius: nullpx;
+    border: 1px solid #EFEFEF;
+}
+
+.locationDiv{
+    margin-top: 60px;
+    margin-left:100px;
+}
+
+.locationTitle{
+    width: 91px;
+    height: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.locationAddress{
+    width: 451px;
+    height: 40px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #4C4C4C;
+    margin-top: 30px;
+}
+
+.mapImage{
+    margin-top: 30px;
+    width: 486px;
+    height: 400px;
+}
+
+.locationDesc{
+    width: 530px;
+    height: 60px;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #4C4C4C;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
