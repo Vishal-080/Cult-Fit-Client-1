@@ -73,6 +73,34 @@
     margin-left: 5px;
 }
 
+.slotsDiv>div{
+    display: flex;
+    padding: 25.3357px 211.131px 25.3357px 25.3357px;
+    align-items: center;
+    border-bottom: 2px solid #C0C0C0;
+}
+
+.slotsDiv p{
+    font-style: normal;
+    font-weight: 390;
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 92.52px;
+}
+
+.slotsDiv button{
+    padding: 13.7235px 44.3375px;
+    border: 1.05566px solid #36BA45;
+    box-sizing: border-box;
+    border-radius: 23.2244px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 17px;
+    color: #36BA45;
+    background-color: white;
+}
+
 .linkshow{
     font-style: normal;
     font-weight: 390;

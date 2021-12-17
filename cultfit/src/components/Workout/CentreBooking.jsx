@@ -11,11 +11,20 @@ export const CentreBooking = () => {
     // const [data, setData] = useState(workoutData[obj.session])
     // const [modal, setModal] = useState(false)
     const [centre, setCentre] = useState({})
-    const [date,setDate] = useState("")
+    const [date, setDate] = useState("2021-12-19")
+    const sessionid = "61bc09e46744538c3297dcd4"
+    const [availableSlots, setAvailableslots] = useState([])
 
     useEffect(() => {
         fetchCenter()
     }, [obj.centre])
+
+
+    useEffect(() => {
+        fetchSlots()
+    }, [date])
+
+
 
     const fetchCenter = () => {
         axios
@@ -32,10 +41,10 @@ export const CentreBooking = () => {
 
     const fetchSlots = () => {
         axios
-            .get(`http://localhost:7765/centres/${obj.centre}`, { withCredentials: true })
+            .get(`http://localhost:7765/bookings/availableslots/${date}/${sessionid}/${obj.centre}`, { withCredentials: true })
             .then(res => {
-                console.log("data", res.data)
-                setCentre(res.data.centre)
+                console.log("data", res.data.filteredslots)
+                setAvailableslots(res.data.filteredslots)
             })
             .catch(err => {
                 console.log("Not properly authenticated!");
@@ -64,28 +73,28 @@ export const CentreBooking = () => {
                         </div>
 
                         <div className={styles.flex}>
-                            <div onClick={()=>setDate("2021-12-19")}  className={styles.dateDiv}>
-                                <p style={{color:date==="2021-12-19"?"#FF3278":"#A2A2A2"}}>SUN</p>
-                                <div style={{backgroundColor:date==="2021-12-19"?"#FF3278":"white"}}>
-                                    <h3 style={{color:date==="2021-12-19"?"white":"#A2A2A2"}}>19</h3>
+                            <div onClick={() => setDate("2021-12-19")} className={styles.dateDiv}>
+                                <p style={{ color: date === "2021-12-19" ? "#FF3278" : "#A2A2A2" }}>SUN</p>
+                                <div style={{ backgroundColor: date === "2021-12-19" ? "#FF3278" : "white" }}>
+                                    <h3 style={{ color: date === "2021-12-19" ? "white" : "#A2A2A2" }}>19</h3>
                                 </div>
                             </div>
-                            <div onClick={()=>setDate("2021-12-20")} className={styles.dateDiv}>
-                                <p style={{color:date==="2021-12-20"?"#FF3278":"#A2A2A2"}}>MON</p>
-                                <div style={{backgroundColor:date==="2021-12-20"?"#FF3278":"white"}}>
-                                    <h3 style={{color:date==="2021-12-20"?"white":"#A2A2A2"}}>20</h3>
+                            <div onClick={() => setDate("2021-12-20")} className={styles.dateDiv}>
+                                <p style={{ color: date === "2021-12-20" ? "#FF3278" : "#A2A2A2" }}>MON</p>
+                                <div style={{ backgroundColor: date === "2021-12-20" ? "#FF3278" : "white" }}>
+                                    <h3 style={{ color: date === "2021-12-20" ? "white" : "#A2A2A2" }}>20</h3>
                                 </div>
                             </div>
-                            <div onClick={()=>setDate("2021-12-21")} className={styles.dateDiv} >
-                                <p style={{color:date==="2021-12-21"?"#FF3278":"#A2A2A2"}}>TUE</p>
-                                <div style={{backgroundColor:date==="2021-12-21"?"#FF3278":"white"}}>
-                                    <h3 style={{color:date==="2021-12-21"?"white":"#A2A2A2"}}>21</h3>
+                            <div onClick={() => setDate("2021-12-21")} className={styles.dateDiv} >
+                                <p style={{ color: date === "2021-12-21" ? "#FF3278" : "#A2A2A2" }}>TUE</p>
+                                <div style={{ backgroundColor: date === "2021-12-21" ? "#FF3278" : "white" }}>
+                                    <h3 style={{ color: date === "2021-12-21" ? "white" : "#A2A2A2" }}>21</h3>
                                 </div>
                             </div>
-                            <div onClick={()=>setDate("2021-12-22")} className={styles.dateDiv}>
-                                <p style={{color:date==="2021-12-22"?"#FF3278":"#A2A2A2"}}>WED</p>
-                                <div style={{backgroundColor:date==="2021-12-22"?"#FF3278":"white"}}>
-                                    <h3 style={{color:date==="2021-12-22"?"white":"#A2A2A2"}}>22</h3>
+                            <div onClick={() => setDate("2021-12-22")} className={styles.dateDiv}>
+                                <p style={{ color: date === "2021-12-22" ? "#FF3278" : "#A2A2A2" }}>WED</p>
+                                <div style={{ backgroundColor: date === "2021-12-22" ? "#FF3278" : "white" }}>
+                                    <h3 style={{ color: date === "2021-12-22" ? "white" : "#A2A2A2" }}>22</h3>
                                 </div>
                             </div>
                         </div>
@@ -93,6 +102,16 @@ export const CentreBooking = () => {
                         <div>
                             <img src="/workoutimages/safety.svg" alt="safetyguide" />
                         </div>
+
+                        <div className={styles.slotsDiv}>
+                            {availableSlots.map((e) => {
+                                return <div>
+                                    <p>{e}</p>
+                                    <button>YOGA</button>
+                                </div>
+                            })}
+                        </div>
+
                     </div>
                 </div>
             </div>
