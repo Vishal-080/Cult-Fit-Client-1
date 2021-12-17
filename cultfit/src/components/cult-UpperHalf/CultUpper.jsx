@@ -405,8 +405,10 @@ const Card2 = styled.div`
     font-size: 12px;
     line-height: 20px;
 
-    img {
-      margin-top: 5px;
+    img{
+      width:15px;
+      height:15px;
+      margin-top: 2px;
     }
   }
 `;
