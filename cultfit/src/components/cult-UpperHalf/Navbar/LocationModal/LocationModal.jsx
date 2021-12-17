@@ -7,8 +7,11 @@ import banglore from "./images/banglore.svg";
 import delhi from "./images/delhi.svg";
 import hyderabad from "./images/hyderabad.svg";
 import mumbai from "./images/mumbai.svg";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import "./locationmodal.css";
+import { SET_LOCATION } from "../../../../Store/GeneralStore/actionTypes";
+import { Actions } from "../../../../Store/GeneralStore/actions";
 
 const customStyles = {
   content: {
@@ -29,6 +32,8 @@ const customStyles = {
 
 export const LocationModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { location } = useSelector(store => store.general, shallowEqual)
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -38,29 +43,45 @@ export const LocationModal = () => {
     setModalIsOpen(false);
   };
 
+  const setLocation = (city) => {
+    dispatch(Actions(SET_LOCATION, city))
+  }
+
   return (
     <>
       <button id="login-button" onClick={setModalIsOpenToTrue}>
-        location
+        {location}
       </button>
 
       <Modal id="location-render" style={customStyles} isOpen={modalIsOpen}>
         <div id="select-city">Select your Location</div>
         <div id="popular">POPULAR CITY</div>
         <div id="cities">
-          <button onClick={setModalIsOpenToFalse}>
+          <button onClick={() => {
+            setModalIsOpenToFalse()
+            setLocation("Bangalore")
+          }}>
             <img src={banglore} alt="banglore-logo" />
             <div>Bangalore</div>
           </button>
-          <button onClick={setModalIsOpenToFalse}>
+          <button onClick={() => {
+            setModalIsOpenToFalse()
+            setLocation("Delhi")
+          }}>
             <img src={delhi} alt="delhi-logo" />
             <div>Delhi</div>
           </button>
-          <button onClick={setModalIsOpenToFalse}>
+          <button onClick={() => {
+            setModalIsOpenToFalse()
+            setLocation("Hyderabad")
+          }}>
             <img src={hyderabad} alt="hyderabad-logo" />
             <div>Hyderabad</div>
           </button>
-          <button onClick={setModalIsOpenToFalse}>
+          <button onClick={() => {
+            setModalIsOpenToFalse()
+            setLocation("Mumbai")
+          }}>
             <img src={mumbai} alt="mumbai-logo" />
             <div>Mumbai</div>
           </button>
