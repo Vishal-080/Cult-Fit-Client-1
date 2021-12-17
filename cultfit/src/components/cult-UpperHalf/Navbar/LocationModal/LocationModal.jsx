@@ -12,6 +12,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import "./locationmodal.css";
 import { SET_LOCATION } from "../../../../Store/GeneralStore/actionTypes";
 import { Actions } from "../../../../Store/GeneralStore/actions";
+import { Redirect } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -35,6 +36,7 @@ export const LocationModal = () => {
   const dispatch = useDispatch();
   const { location } = useSelector(store => store.general, shallowEqual)
 
+
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
   };
@@ -45,6 +47,7 @@ export const LocationModal = () => {
 
   const setLocation = (city) => {
     dispatch(Actions(SET_LOCATION, city))
+    window.location.href="http://localhost:3000/cult"
   }
 
   return (
@@ -66,10 +69,10 @@ export const LocationModal = () => {
           </button>
           <button onClick={() => {
             setModalIsOpenToFalse()
-            setLocation("Delhi")
+            setLocation("Delhi NCR")
           }}>
             <img src={delhi} alt="delhi-logo" />
-            <div>Delhi</div>
+            <div>Delhi NCR</div>
           </button>
           <button onClick={() => {
             setModalIsOpenToFalse()

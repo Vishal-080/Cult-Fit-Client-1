@@ -28,6 +28,21 @@ export const CentreBooking = () => {
 
 
 
+    // const locationChange = () => {
+    //     axios
+    //         .get(`http://localhost:7765/cities/centres/${location}`, { withCredentials: true })
+    //         .then(res => {
+    //             console.log("data", res.data[0])
+    //             setCentre(res.data[0])
+    //         })
+    //         .catch(err => {
+    //             console.log("Not properly authenticated!");
+    //             console.log("Error", err);
+    //         })
+    // }
+
+
+
     const fetchCenter = () => {
         axios
             .get(`http://localhost:7765/centres/${obj.centre}`, { withCredentials: true })
