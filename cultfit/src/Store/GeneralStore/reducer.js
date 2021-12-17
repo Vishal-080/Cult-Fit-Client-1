@@ -4,7 +4,7 @@
  * @returns
  */
 
- import { loadData, saveData } from "../../utils/localStorage";
+import { loadData, saveData } from "../../utils/localStorage";
 import { SET_LOCATION, SET_SESSIONTYPE } from "./actionTypes";
 
 

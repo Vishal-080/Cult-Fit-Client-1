@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import { SET_SESSIONTYPE } from "../../../Store/GeneralStore/actionTypes";
+import { Actions } from "../../../Store/GeneralStore/actions";
+import { useHistory } from "react-router-dom";
 
 /******* Styled components ********/
 const WorkoutHeading = styled.div`
@@ -29,7 +34,6 @@ const GridItem = styled.div`
     position: absolute;
     z-index: 99;
     padding: 19px;
-    width: 15%;
     color: #ffffff;
     font-weight: bold;
     font-size: 20px;
@@ -58,17 +62,27 @@ const workouts = [
   "Boxing"
 ];
 
+
+
 export const WorkoutGrid = () => {
+
+  const dispatch = useDispatch();
+  const history=useHistory()
+  
+  const setSessionType = (el) => {
+    dispatch(Actions(SET_SESSIONTYPE, el))
+    history.push(`/sessiontype/${el}`)
+    // return <Redirect to={} />
+  }
+
   return (
     <>
       <WorkoutHeading>WORKOUTS</WorkoutHeading>
       <Grid>
         {workouts.map((el, i) => (
-          <GridItem key={i}>
-            <Link to={`/sessiontype/${el}`}>
+          <GridItem key={i} onClick={()=>setSessionType(el)}>
               <p>{el}</p>
               <img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
-            </Link>
           </GridItem>
         ))}
       </Grid>
@@ -77,3 +91,9 @@ export const WorkoutGrid = () => {
 };
 
 export default WorkoutGrid;
+
+
+{/* <Link to={`/sessiontype/${el}`}>
+<p>{el}</p>
+<img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
+</Link> */}

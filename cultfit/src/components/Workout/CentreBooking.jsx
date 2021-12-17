@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from "./Centre.module.css"
+import { shallowEqual, useSelector } from "react-redux";
 
 export const CentreBooking = () => {
 
@@ -11,10 +12,10 @@ export const CentreBooking = () => {
 
     const [centre, setCentre] = useState({})
     const [date, setDate] = useState("2021-12-19")
-    const sessionid = "61bc09e46744538c3297dcd4"
     const [availableSlots, setAvailableslots] = useState([])
     const [bookingModal, setbookingModal] = useState(false)
     const [sessionBookModal, setsessionBookModal] = useState(false)
+    const { sessiontype } = useSelector(store => store.general, shallowEqual)
 
     useEffect(() => {
         fetchCenter()
@@ -42,7 +43,7 @@ export const CentreBooking = () => {
 
     const fetchSlots = () => {
         axios
-            .get(`http://localhost:7765/bookings/availableslots/${date}/${sessionid}/${obj.centre}`, { withCredentials: true })
+            .get(`http://localhost:7765/bookings/availableslots/${date}/${sessiontype}/${obj.centre}`, { withCredentials: true })
             .then(res => {
                 console.log("data", res.data.filteredslots)
                 setAvailableslots(res.data.filteredslots)
@@ -108,7 +109,7 @@ export const CentreBooking = () => {
                             {availableSlots.map((e) => {
                                 return <div>
                                     <p>{e}</p>
-                                    <button onClick={() => setbookingModal(true)}>YOGA</button>
+                                    <button onClick={() => setbookingModal(true)}>{sessiontype.toUpperCase()}</button>
                                 </div>
                             })}
                         </div>

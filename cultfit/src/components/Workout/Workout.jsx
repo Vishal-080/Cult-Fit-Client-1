@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { shallowEqual, useSelector } from "react-redux";
 
 const workoutData = {
     "Yoga": ["Yoga", "250", "/workoutimages/Yoga.png", "Flexibility | Stress reduction | Mental & Emotional Well Being", "Yoga", "Every class has an array of breathing techniques, a variety of asanas and meditation techniques. Helps in improving confidence & balance while gaining a stronger body in the process."],
@@ -19,10 +20,13 @@ const Workout = () => {
     const [data, setData] = useState(workoutData[obj.session])
     const [modal, setModal] = useState(false)
     const [centres, setCentres] = useState([])
+    const { sessiontype,location } = useSelector(store => store.general, shallowEqual)
+
+    console.log(sessiontype)
 
     const fetchCenters = () => {
         axios
-            .get(`http://localhost:7765/cities/centres/Bangalore`, { withCredentials: true })
+            .get(`http://localhost:7765/cities/centres/${location}`, { withCredentials: true })
             .then(res => {
                 setCentres(res.data)
             })
