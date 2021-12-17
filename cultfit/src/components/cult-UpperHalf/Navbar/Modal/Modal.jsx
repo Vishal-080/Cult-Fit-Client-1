@@ -14,7 +14,7 @@ const customStyles = {
   content: {
     width: "374px",
     height: "572px",
-    top: "53%",
+    top: "55%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -22,6 +22,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     backgroundColor: "#fffff",
     borderRadius: "10px",
+    zIndex:"200"
   },
 };
 
