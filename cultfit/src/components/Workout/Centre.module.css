@@ -16,12 +16,12 @@
     display: flex;
 }
 
-.image-section{
+.imagesection{
     position: fixed;
     width: 600px;
-    margin-top: 164px;
+    margin-top: 164px !important;
 }
-.workOut-img{
+.workOutimg{
     width: 486px;;
     height: 339px;
     left: 0px;
@@ -29,17 +29,54 @@
     order: 0;
 }
 
-.body-section{
+.bodysection{
     width: 600px;
-    margin-top: 164px;
+    margin-top: 164px !important;
     margin-left: 612px;
 }
 
-.link-show{
-    color: #888E9E;
+
+.bodysection>div{
+    margin-bottom: 36.18px;
+}
+
+.bodysection>div:nth-child(1)>p{
+    margin:0px 10px;
+}
+
+.bodysection>div:nth-child(2)>p:nth-child(1){
+    margin-left: 5px;
+}
+
+.bodysection>div:nth-child(3){
+    
+}
+
+.dateDiv{
+    margin-right: 32px;
+    text-align: center;
+}
+
+.dateDiv>p{
     font-style: normal;
     font-weight: 390;
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 17px;
+    width: 46px;
+    height: 33px;
+}
+
+.dateDiv>div{
+    width: 40px;
+    height: 40px;
+    background: #FF3278;
+    border-radius: 100px;
+}
+
+.linkshow{
+    font-style: normal;
+    font-weight: 390;
+    font-size: 14px;
     line-height: 20px;
     margin-right: 15px;
 }
