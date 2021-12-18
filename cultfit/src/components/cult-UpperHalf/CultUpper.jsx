@@ -549,6 +549,23 @@ const Card1 = styled.div`
 
   @media screen and (max-width: 400px) {
     width: 100%;
+
+    div{
+      display:flex;
+      /* flex-direction: column; */
+      strong{
+        margin-top:20px;
+      }
+    }
+    div div{
+      display:flex;
+      flex-direction: column;
+      align-text:center;
+      padding-left:30px;
+      strike{
+        margin-left:10px;
+      }
+    }
   }
 `;
 const Card2 = styled.div`
