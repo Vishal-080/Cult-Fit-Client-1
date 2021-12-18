@@ -2,6 +2,7 @@ import "./Footer.css";
 import logo from "./images/cult-logo-white SVG.svg";
 import storeLogo from "./images/Frame 4.svg";
 import socialLogo from "./images/social-logo.svg";
+import Footer2 from "../Footer2";
 
 const Footer = () => {
   return (
@@ -35,7 +36,7 @@ const Footer = () => {
           <img src={storeLogo} alt="work-out" className="apps-logo" />
         </div>
       </div>
-
+      <Footer2 />
       <div className="flex">
         <div className="footer-other-links">
           <p>Contact Us</p>

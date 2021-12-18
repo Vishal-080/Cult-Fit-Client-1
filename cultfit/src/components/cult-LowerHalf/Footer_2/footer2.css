@@ -4,6 +4,7 @@
   width: 1200px;
   margin: 0 auto;
   background-color: #000;
+  
 }
 
 /* Related searches */
@@ -11,6 +12,7 @@
   padding: 40px;
   background-color: #111213;
   padding-bottom: 50px;
+  margin-bottom: 110px;
 }
 
 .related_searches_section .search_list {

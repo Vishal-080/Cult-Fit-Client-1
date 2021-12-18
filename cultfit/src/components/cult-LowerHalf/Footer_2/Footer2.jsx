@@ -1,4 +1,4 @@
-import "./Footer2.css";
+import "./footer2.css";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
@@ -84,7 +84,7 @@ export const Footer2 = () => {
           </div>
         </div>
 
-        <div className="bottom">
+        {/* <div className="bottom">
           <div className="links">
             <div>Contact us</div>
             <div>FAQ</div>
@@ -106,7 +106,7 @@ export const Footer2 = () => {
               <img src={"./FooterImages/youtube_icon_white_1.svg"} alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </MainContainer>
   );
