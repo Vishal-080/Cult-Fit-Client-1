@@ -282,3 +282,41 @@
   color: black;
 
 }
+
+
+
+.downarrow{
+  position: relative;
+}
+
+.dropdownmenu{
+  position:absolute;
+  top:60px;
+  right:50px;
+  padding:0px 20px;
+  padding-right:50px;
+  background-color: white;
+  box-shadow: rgb(186 182 182 / 50%) 0px 2px 24px 0px;
+}
+
+.dropdownmenu img{
+  margin-right: 30px;
+}
+
+.dropdownmenu>div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin:15px 0px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.dropdownmenu>div:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.orders img{
+  margin-right: 25px;
+}

@@ -23,7 +23,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     backgroundColor: "#fffff",
     borderRadius: "10px",
-    zIndex:"200",
+    zIndex: "200",
   },
 };
 
@@ -31,7 +31,7 @@ export const ModalInFunctionalComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [val, setVal] = useState(true);
   const [social, setSocial] = useState(true);
-  const { isAuth,user } = useSelector(store => store.auth, shallowEqual)
+  const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -45,13 +45,48 @@ export const ModalInFunctionalComponent = () => {
 
   return val ? (
     <>
-      {isAuth?<img src="/workoutimages/drop.svg"/>:<button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>}
+      {isAuth ? <>
+        <img src="/workoutimages/drop.svg" className="downarrow" />
+          <div className="dropdownmenu">
+            <div>
+              <img src="https://static.cure.fit/assets/images/profile-icon.svg" />
+              Profile
+            </div>
+            <div className="orders">
+              <img src="https://static.cure.fit/assets/images/cart-black.svg" />
+              Orders
+            </div>
+            <div>
+              <img src="https://static.cure.fit/assets/images/health-profile-black.svg" />
+              Medical Records
+            </div>
+            <div><img src="https://static.cure.fit/assets/images/combined-shape-black.svg" />
+              Active Packs
+            </div>
+            <div>
+              <img src="https://static.cure.fit/assets/images/coupon-black.svg" />
+              Redeem Voucher
+            </div>
+            <div>
+              <img src="https://static.cure.fit/assets/images/settings-black.svg" />
+              Account
+            </div>
+            <div>
+              <img src="https://static.cure.fit/assets/images/support-black.svg" />
+              Support
+            </div>
+            <div>
+              <img src="https://static.cure.fit/assets/images/logout-black.svg" />
+              Logout
+            </div>
+          </div>
+      </> : <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>}
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
         <button id="cancel" onClick={setModalIsOpenToFalse}>
           <img src={cross} alt="cross-icon" />
         </button>
-        <Loginform closeModal={setModalIsOpenToFalse}/>
+        <Loginform closeModal={setModalIsOpenToFalse} />
         <button
           id="page-one-social"
           onClick={() => {
