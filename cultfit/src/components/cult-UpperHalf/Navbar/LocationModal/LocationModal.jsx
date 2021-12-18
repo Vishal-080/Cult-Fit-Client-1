@@ -35,7 +35,10 @@ export const LocationModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const dispatch = useDispatch();
   const { location } = useSelector(store => store.general, shallowEqual)
+  const { isAuth,user } = useSelector(store => store.auth, shallowEqual)
 
+
+  console.log("userdetails",isAuth,user)
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);

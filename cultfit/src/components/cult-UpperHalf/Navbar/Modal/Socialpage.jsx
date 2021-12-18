@@ -9,11 +9,11 @@ export const Socialpage = () => {
     <div id="social-page">
       <img src={cultlogo} alt="cult-logo" id="logo" />
       <button id="buttonone">
-        <img src={googlecolor} alt="googlecolor-logo" /> Sign in with Google
+        <img src={googlecolor} alt="googlecolor-logo" /> Sign in Google
       </button>
       <button id="buttontwo">
         <img src={fbcolor} alt="fb-logo" />
-        Sign in with Facebook
+        Sign in Facebook
       </button>
       <button id="buttonthree">
         <img src={google} alt="google-logo" />

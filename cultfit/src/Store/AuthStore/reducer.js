@@ -7,11 +7,11 @@
 import { loadData, saveData } from "../../utils/localStorage";
 import { LOGIN_FAILURE, LOGIN_SUCCESS } from "./actionTypes";
 
-const token = loadData("token")
+const user = loadData("user")
 
 const initState = {
-    isAuth: token ? true : false,
-    token: token || ""
+    isAuth: user ? true : false,
+    user:user||""
 }
 
 export const authReducer = (state = initState, { type, payload }) => { //store 1st and action 2nd - order matters
@@ -20,11 +20,11 @@ export const authReducer = (state = initState, { type, payload }) => { //store 1
 
         case LOGIN_SUCCESS: {
 
-            saveData("token", payload)
+            saveData("user", payload)
             return {
                 ...state,
                 isAuth: true,
-                token: payload
+                user: payload
             };
         }
 
@@ -32,7 +32,7 @@ export const authReducer = (state = initState, { type, payload }) => { //store 1
             return {
                 ...state,
                 isAuth: false,
-                token: ""
+                user: ""
             };
         }
 

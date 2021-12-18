@@ -68,7 +68,7 @@ export const Signupform = () => {
         <input value={userData.lastname} name="lastname" onChange={handlechange} type="text" placeholder="Last Name" />
       </div>
       <input value={userData.email} name="email" onChange={handlechange} type="email" placeholder="E-mail" />
-      <input value={userData.password} name="password" onChange={handlechange} type="password" placeholder="Enter Password" />
+      <input value={userData.password} name="password" onChange={handlechange} type="password" placeholder="*******" />
       <input value={userData.password} type="password" placeholder="Confirm Password" />
 
       {signuperror ? <p>Already registered, please go to login</p> : ""}
