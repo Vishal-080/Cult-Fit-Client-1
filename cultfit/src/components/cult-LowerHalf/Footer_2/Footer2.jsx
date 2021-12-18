@@ -8,7 +8,7 @@ const MainContainer = styled.div`
 export const Footer2 = () => {
   return (
     <MainContainer>
-      <div className="container">
+      <div className="footercontainer">
         <div className="related_searches_section">
           <h4>Related searches</h4>
           <div className="search_list">

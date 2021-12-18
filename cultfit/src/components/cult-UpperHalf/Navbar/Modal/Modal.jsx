@@ -32,6 +32,7 @@ export const ModalInFunctionalComponent = () => {
   const [val, setVal] = useState(true);
   const [social, setSocial] = useState(true);
   const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
+  const [dropdown,setDropDown] = useState(false)
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -46,8 +47,8 @@ export const ModalInFunctionalComponent = () => {
   return val ? (
     <>
       {isAuth ? <>
-        <img src="/workoutimages/drop.svg" className="downarrow" />
-          <div className="dropdownmenu">
+        <img src="/workoutimages/drop.svg" className="downarrow" onClick={()=>setDropDown(!dropdown)}/>
+          {dropdown?<div className="dropdownmenu">
             <div>
               <img src="https://static.cure.fit/assets/images/profile-icon.svg" />
               Profile
@@ -79,7 +80,7 @@ export const ModalInFunctionalComponent = () => {
               <img src="https://static.cure.fit/assets/images/logout-black.svg" />
               Logout
             </div>
-          </div>
+          </div>:""}
       </> : <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>}
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
