@@ -9,7 +9,10 @@ import google from "./images/google.svg";
 import fb from "./images/fb.svg";
 
 import "./Modal.css";
-import { shallowEqual, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { LOGIN_FAILURE } from "../../../../Store/AuthStore/actionTypes";
+import { Actions } from "../../../../Store/AuthStore/action";
+import { CentreBooking } from "../../../Workout/CentreBooking";
 
 const customStyles = {
   content: {
@@ -33,6 +36,7 @@ export const ModalInFunctionalComponent = () => {
   const [social, setSocial] = useState(true);
   const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
   const [dropdown,setDropDown] = useState(false)
+  const dispatch = useDispatch();
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -44,10 +48,18 @@ export const ModalInFunctionalComponent = () => {
     setSocial(true);
   };
 
+  const logoutuser=()=>{
+    setDropDown(false)
+    dispatch(Actions(LOGIN_FAILURE, ""))
+    localStorage.clear();
+  }
+
   return val ? (
     <>
       {isAuth ? <>
-        <img src="/workoutimages/drop.svg" className="downarrow" onClick={()=>setDropDown(!dropdown)}/>
+        <img src="/workoutimages/drop.svg" className="downarrow" onClick={()=>{
+          console.log("here")
+          setDropDown(!dropdown)}}/>
           {dropdown?<div className="dropdownmenu">
             <div>
               <img src="https://static.cure.fit/assets/images/profile-icon.svg" />
@@ -76,7 +88,7 @@ export const ModalInFunctionalComponent = () => {
               <img src="https://static.cure.fit/assets/images/support-black.svg" />
               Support
             </div>
-            <div>
+            <div onClick={logoutuser}>
               <img src="https://static.cure.fit/assets/images/logout-black.svg" />
               Logout
             </div>
@@ -123,7 +135,7 @@ export const ModalInFunctionalComponent = () => {
     </>
   ) : (
     <>
-      <button id="login-button" onClick={setModalIsOpenToTrue}>login</button>
+      <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
         <button id="cancel" onClick={setModalIsOpenToFalse}>

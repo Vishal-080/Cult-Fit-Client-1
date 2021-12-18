@@ -1,31 +1,65 @@
 
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from "./Centre.module.css"
-import { shallowEqual, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { ModalInFunctionalComponent } from '../cult-UpperHalf/Navbar/Modal/Modal';
 
 export const CentreBooking = () => {
 
     const obj = useParams();
-    console.log(obj.centre)
 
     const [centre, setCentre] = useState({})
     const [date, setDate] = useState("2021-12-19")
-    const [time,setTime] = useState("")
+    const [time, setTime] = useState("")
     const [availableSlots, setAvailableslots] = useState([])
     const [bookingModal, setbookingModal] = useState(false)
     const [sessionBookModal, setsessionBookModal] = useState(false)
     const { sessiontype } = useSelector(store => store.general, shallowEqual)
+    const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
+    const [sessionid, setSessionid] = useState("")
+    const [slotid, setSlotid] = useState("")
+    const history = useHistory();
+
+    const [bookingdetails, setbookingdetails] = useState({
+        userid: user._id,
+        centreid: obj.centre,
+        sessionid: "",
+        slotsid: "",
+        date: ""
+    })
 
     useEffect(() => {
         fetchCenter()
     }, [obj.centre])
 
-
     useEffect(() => {
         fetchSlots()
     }, [date])
+
+    useEffect(() => {
+        fetchSessionid()
+    }, [sessiontype])
+
+
+
+    const fetchSessionid = () => {
+        axios
+            .get(`http://localhost:7765/sessions/sessionid/${sessiontype}`, { withCredentials: true })
+            .then(res => {
+                console.log("sessionid", res.data.session[0]._id)
+                setbookingdetails({
+                    ...bookingdetails,
+                    sessionid: res.data.session[0]._id
+                })
+            })
+            .catch(err => {
+                console.log("Not properly authenticated!");
+                console.log("Error", err);
+            })
+    }
+
 
     const fetchCenter = () => {
         axios
@@ -53,6 +87,53 @@ export const CentreBooking = () => {
             })
     }
 
+
+    const DoBooking = () => {
+
+        console.log(bookingdetails)
+
+        axios
+            .post("http://localhost:7765/bookings", bookingdetails)
+            .then(res => {
+                console.log("data", res.data)
+                setsessionBookModal(true)
+            })
+            .catch(err => {
+                console.log("Not properly authenticated!");
+                console.log("Error", err);
+            })
+    }
+
+
+    const loggedInorNot = () => {
+        console.log("here")
+        setbookingModal(false)
+        if (!isAuth) {
+            alert("Kindly login to proceed further")
+        } else {
+            DoBooking()
+        }
+    }
+
+    const handleChangeofSlot = (id) => {
+        setbookingdetails({
+            ...bookingdetails,
+            slotsid: id
+        })
+    }
+
+    const handleChangeofDate = (date) => {
+        setbookingdetails({
+            ...bookingdetails,
+            date: date
+        })
+    }
+
+    const Directtolanding = () =>{
+        setsessionBookModal(false)
+        history.push("/")
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.main}>
@@ -74,25 +155,37 @@ export const CentreBooking = () => {
                         </div>
 
                         <div className={styles.flex}>
-                            <div onClick={() => setDate("2021-12-19")} className={styles.dateDiv}>
+                            <div onClick={() =>{
+                                setDate("2021-12-19")
+                                handleChangeofDate("2021-12-19")
+                            }} className={styles.dateDiv}>
                                 <p style={{ color: date === "2021-12-19" ? "#FF3278" : "#A2A2A2" }}>SUN</p>
                                 <div style={{ backgroundColor: date === "2021-12-19" ? "#FF3278" : "white" }}>
                                     <h3 style={{ color: date === "2021-12-19" ? "white" : "#A2A2A2" }}>19</h3>
                                 </div>
                             </div>
-                            <div onClick={() => setDate("2021-12-20")} className={styles.dateDiv}>
+                            <div onClick={() => {
+                                setDate("2021-12-20")
+                                handleChangeofDate("2021-12-20")
+                            }} className={styles.dateDiv}>
                                 <p style={{ color: date === "2021-12-20" ? "#FF3278" : "#A2A2A2" }}>MON</p>
                                 <div style={{ backgroundColor: date === "2021-12-20" ? "#FF3278" : "white" }}>
                                     <h3 style={{ color: date === "2021-12-20" ? "white" : "#A2A2A2" }}>20</h3>
                                 </div>
                             </div>
-                            <div onClick={() => setDate("2021-12-21")} className={styles.dateDiv} >
+                            <div onClick={() => {
+                                setDate("2021-12-21")
+                                handleChangeofDate("2021-12-21")
+                            }} className={styles.dateDiv} >
                                 <p style={{ color: date === "2021-12-21" ? "#FF3278" : "#A2A2A2" }}>TUE</p>
                                 <div style={{ backgroundColor: date === "2021-12-21" ? "#FF3278" : "white" }}>
                                     <h3 style={{ color: date === "2021-12-21" ? "white" : "#A2A2A2" }}>21</h3>
                                 </div>
                             </div>
-                            <div onClick={() => setDate("2021-12-22")} className={styles.dateDiv}>
+                            <div onClick={() => {
+                                setDate("2021-12-22")
+                                handleChangeofDate("2021-12-22")
+                            }} className={styles.dateDiv}>
                                 <p style={{ color: date === "2021-12-22" ? "#FF3278" : "#A2A2A2" }}>WED</p>
                                 <div style={{ backgroundColor: date === "2021-12-22" ? "#FF3278" : "white" }}>
                                     <h3 style={{ color: date === "2021-12-22" ? "white" : "#A2A2A2" }}>22</h3>
@@ -107,11 +200,12 @@ export const CentreBooking = () => {
                         <div className={styles.slotsDiv}>
                             {availableSlots.map((e) => {
                                 return <div>
-                                    <p>{e}</p>
+                                    <p>{e.slotTime}</p>
                                     <button onClick={() => {
                                         setbookingModal(true)
-                                        setTime(e)
-                                        }}>{sessiontype.toUpperCase()}</button>
+                                        setTime(e.slotTime)
+                                        handleChangeofSlot(e._id)
+                                    }}>{sessiontype.toUpperCase()}</button>
                                 </div>
                             })}
                         </div>
@@ -155,10 +249,7 @@ export const CentreBooking = () => {
 
                             </div>
                             <div className={styles.bookbtn}>
-                                <button onClick={() => {
-                                    setsessionBookModal(true)
-                                    setbookingModal(false)
-                                }} >BOOK FOR FREE</button>
+                                <button onClick={loggedInorNot} >BOOK FOR FREE</button>
                             </div>
 
                         </div>
@@ -172,14 +263,14 @@ export const CentreBooking = () => {
                     <div className={styles.bookcontainer}>
                         <img src="/workoutimages/confirmmark.svg" />
                         <p className={styles.classbooked}>CLASS BOOKED!</p>
-                        <p className={styles.classDetails}>Your Cult Class For Hatha Yoga on Thu, 2 Dec at 08:30 PM at cult Janakpuri is confirmed!</p>
+                        <p className={styles.classDetails}>Your Cult Class For {sessiontype} on {date} at {time} at {centre.centrename} is confirmed!</p>
                         <img src="/workoutimages/corona.svg" />
                         <p className={styles.downloadline}>Download cult.fit app for the best experience</p>
                         <div className={styles.storeimages}>
                             <img src="/workoutimages/appstore.svg" />
                             <img src="/workoutimages/playstore.svg" />
                         </div>
-                        <button className={styles.okbtn} onClick={()=>setsessionBookModal(false)}>OK</button>
+                        <button className={styles.okbtn} onClick={Directtolanding}>OK</button>
                     </div>
                 </div>
             </div>

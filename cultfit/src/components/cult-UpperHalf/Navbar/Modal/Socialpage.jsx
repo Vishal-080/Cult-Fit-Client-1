@@ -5,10 +5,16 @@ import googlecolor from "./images/googlecolor.svg";
 import google from "./images/google.svg";
 
 export const Socialpage = () => {
+
+  const googleAuth = () => {
+    localStorage.setItem("loginMethod","Fastlogin")
+    window.open('http://localhost:7765/auth/google','_self');
+  }
+
   return (
     <div id="social-page">
       <img src={cultlogo} alt="cult-logo" id="logo" />
-      <button id="buttonone">
+      <button id="buttonone" onClick={googleAuth}>
         <img src={googlecolor} alt="googlecolor-logo" /> Sign in Google
       </button>
       <button id="buttontwo">
