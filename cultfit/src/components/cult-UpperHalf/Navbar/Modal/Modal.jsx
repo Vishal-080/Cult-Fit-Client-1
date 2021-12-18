@@ -12,7 +12,8 @@ import "./Modal.css";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { LOGIN_FAILURE } from "../../../../Store/AuthStore/actionTypes";
 import { Actions } from "../../../../Store/AuthStore/action";
-import { CentreBooking } from "../../../Workout/CentreBooking";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const customStyles = {
   content: {
@@ -34,9 +35,10 @@ export const ModalInFunctionalComponent = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [val, setVal] = useState(true);
   const [social, setSocial] = useState(true);
-  const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
-  const [dropdown,setDropDown] = useState(false)
+  const { isAuth } = useSelector(store => store.auth, shallowEqual)
+  const [dropdown, setDropDown] = useState(false)
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);
@@ -48,51 +50,55 @@ export const ModalInFunctionalComponent = () => {
     setSocial(true);
   };
 
-  const logoutuser=()=>{
+  const logoutuser = () => {
     setDropDown(false)
     dispatch(Actions(LOGIN_FAILURE, ""))
     localStorage.clear();
+    history.push("/")
   }
 
   return val ? (
     <>
       {isAuth ? <>
-        <img src="/workoutimages/drop.svg" className="downarrow" onClick={()=>{
+        <img src="/workoutimages/drop.svg" className="downarrow" onClick={() => {
           console.log("here")
-          setDropDown(!dropdown)}}/>
-          {dropdown?<div className="dropdownmenu">
+          setDropDown(!dropdown)
+        }} />
+        {dropdown ? <div className="dropdownmenu">
+          <Link to="/profile">
             <div>
               <img src="https://static.cure.fit/assets/images/profile-icon.svg" />
               Profile
             </div>
-            <div className="orders">
-              <img src="https://static.cure.fit/assets/images/cart-black.svg" />
-              Orders
-            </div>
-            <div>
-              <img src="https://static.cure.fit/assets/images/health-profile-black.svg" />
-              Medical Records
-            </div>
-            <div><img src="https://static.cure.fit/assets/images/combined-shape-black.svg" />
-              Active Packs
-            </div>
-            <div>
-              <img src="https://static.cure.fit/assets/images/coupon-black.svg" />
-              Redeem Voucher
-            </div>
-            <div>
-              <img src="https://static.cure.fit/assets/images/settings-black.svg" />
-              Account
-            </div>
-            <div>
-              <img src="https://static.cure.fit/assets/images/support-black.svg" />
-              Support
-            </div>
-            <div onClick={logoutuser}>
-              <img src="https://static.cure.fit/assets/images/logout-black.svg" />
-              Logout
-            </div>
-          </div>:""}
+          </Link>
+          <div className="orders">
+            <img src="https://static.cure.fit/assets/images/cart-black.svg" />
+            Orders
+          </div>
+          <div>
+            <img src="https://static.cure.fit/assets/images/health-profile-black.svg" />
+            Medical Records
+          </div>
+          <div><img src="https://static.cure.fit/assets/images/combined-shape-black.svg" />
+            Active Packs
+          </div>
+          <div>
+            <img src="https://static.cure.fit/assets/images/coupon-black.svg" />
+            Redeem Voucher
+          </div>
+          <div>
+            <img src="https://static.cure.fit/assets/images/settings-black.svg" />
+            Account
+          </div>
+          <div>
+            <img src="https://static.cure.fit/assets/images/support-black.svg" />
+            Support
+          </div>
+          <div onClick={logoutuser}>
+            <img src="https://static.cure.fit/assets/images/logout-black.svg" />
+            Logout
+          </div>
+        </div> : ""}
       </> : <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>}
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>

@@ -47,7 +47,7 @@ export const LocationModal = () => {
 
   const setLocation = (city) => {
     dispatch(Actions(SET_LOCATION, city))
-    window.location.href="http://localhost:3000/cult"
+    window.location.href="http://localhost:3000"
   }
 
   return (

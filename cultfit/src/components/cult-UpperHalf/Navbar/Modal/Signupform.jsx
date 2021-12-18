@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import cultlogo from "./images/cultlogo.svg";
 
 export const Signupform = () => {
+
+  const history = useHistory();
 
   const [userData, setUserData] = useState({
     firstname: "",
@@ -51,7 +54,8 @@ export const Signupform = () => {
         emptyData()
         console.log(res);
         console.log(res.data);
-        // history.push("/login");
+        history.push("/");
+        alert("Kindly click on login")
       }).catch(function (e) {
         setSignUpError(true)
         emptyData()

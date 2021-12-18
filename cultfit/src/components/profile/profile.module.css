@@ -10,29 +10,31 @@
 }
 
 
-.profile-container{
-    margin: auto;
+.profilecontainer{
+    width:1200px;
+    margin-top: 64px;
 }
 
 .flex{
     display: flex;
 }
 
-.left-container{
+.leftcontainer{
     height: 500px;
-    width: 401px;
+    width: 400px;
     background: #FFFFFF;
     border: 1px solid #F3F3F3;
     box-sizing: border-box;
     box-shadow: 4px 4px 17px 4px rgba(0, 0, 0, 0.04);
 }
-.profiles-img{
+
+.profilesimg{
     width: 80px;
     height: 80px;
     margin: 32px 29px 30px 49px;
 }
 
-.profile-name{
+.profilename{
     width: 104px;
     height: 30px;
     font-style: normal;
@@ -43,7 +45,7 @@
     margin-top: 45px;
 }
 
-.profile-title{
+.profiletitle{
     width: 80px;
     height: 20px;
     font-style: normal;
@@ -54,23 +56,24 @@
     order: 1;
 }
 
-.hr-line{
+.hrline{
     width: 393px;
     border: 1px solid #EFEFEF;
 }
 
-.menu-container{
+.menucontainer{
     margin-top: 57px;
 }
 
-.menus-box{
+
+.menusbox{
     height: 56px;
     width: 399px;
     padding: 0px, 0px, 0px, 46px;
     background: #FFFFFF;
 }
 
-.menu-title{
+.menutitle{
     width: 267px;
     height: 20px;
     font-style: normal;
@@ -81,27 +84,27 @@
     margin: 18px 0px 18px 46px;
 }
 
-.vector-img{
+.vectorimg{
     height: 19.00000762939453px;
     width: 21.999727249145508px;
     margin: 18px 28px 18px 28px;
 }
 
-.profiles-img2{
+.profilesimg2{
     height: 180px;
     width: 180px;
     margin: 150px 326px 78px 430px;
 }
 
-.detail-container{
+.detailcontainer{
     margin-left: 105px;
 }
 
-.inner-box{
+.innerbox{
     margin-top: 22px;
 }
 
-.name-title{
+.nametitle{
     height: 20px;
     width: 179px;
     font-style: normal;
@@ -111,7 +114,7 @@
     color: #000000;
 }
 
-.name-details{
+.namedetails{
     width: 281px;
     height: 20px;
     font-style: normal;
@@ -122,22 +125,24 @@
     margin-top: 12px;
 }
 
-.hr-lines{
+.hrlines{
     width: 383px;
     border: 1px solid #908E8E;
     margin: 12px 0px 0px 0px; 
 }
 
-.men-img{
-    margin-right: 22px;
-    margin-left: 40px;
+.menimg{
+    margin-right: 10px;
 }
 
-.box-2{
+.gendericons{
+    margin-left: 60px;
+}
+.box2{
     margin-left: 47px;
 }
 
-.add-btn{
+.addbtn{
     width: 18px;
     height: 20px;
     font-style: normal;
@@ -146,8 +151,9 @@
     line-height: 20px;
     color: #FF3278;
     margin-left: 12px;
+    margin-top: 15px;
 }
-.discard-btn{
+.discardbtn{
     width: 170px;
     height: 40px;
     justify-content: center;
@@ -160,9 +166,10 @@
     font-weight: 420;
     font-size: 16px;
     line-height: 40px;
+    border:none;
 }
 
-.save-btn{
+.savebtn{
     justify-content: center;
     align-items: center;
     padding: 0px 24px;
@@ -175,6 +182,7 @@
     font-weight: 420;
     font-size: 16px;
     line-height: 40px;
+    border:none;
 }
 .edit-img{
     width: 180px;

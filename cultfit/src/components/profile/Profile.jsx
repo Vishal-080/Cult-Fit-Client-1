@@ -1,117 +1,123 @@
-import './profile.css';
-import profiles from './images/profiles.svg';
+
 import vector from './images/Vector.svg';
 import men from './images/men-logo.svg';
 import woman from './images/woman-logo.svg';
+import styles from "./profile.module.css"
+import { shallowEqual, useSelector } from 'react-redux';
 
 const Profile = () => {
+
+    const { user } = useSelector(store => store.auth, shallowEqual)
+
     return (
-        <div className='profile-container'>
-            <div className="flex">
-                <div className='left-container'>
-                    <div className="flex">
+        <div className={styles.profilecontainer}>
+            <div className={styles.flex}>
+                <div className={styles.leftcontainer}>
+                    <div className={styles.flex}>
                         <div>
-                            <img src={profiles} alt="work-out" className='profiles-img' />
+                            <img src="https://static.cure.fit/assets/images/user-default.png" alt="work-out" className={styles.profilesimg} />
                         </div>
                         <div>
-                            <p className="profile-name" >Suhail Shaikh</p>
-                            <p className="profile-title">VIEW PROFILE</p>
+                            <p className={styles.profilename}>{user.firstname}</p>
+                            <p className={styles.profiletitle}>VIEW PROFILE</p>
                         </div>
                     </div>
-                    <div className="hr-line"></div>
-                    <div className='menu-container'>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Profile</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                    <div className={styles.hrline}></div>
+                    <div className={styles.menucontainer}>
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Profile</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Workouts</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Workouts</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Medical Records</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Medical Records</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Active Packs</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Active Packs</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Redeem Voucher</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Redeem Voucher</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Account</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Account</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Support</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Support</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
-                        <div className="menus-box flex">
-                            <div className='menu-title'>Logout</div>
-                            <img src={vector} alt="work-out" className='vector-img' />
+                        <div className={`${styles.menusbox} ${styles.flex}`}>
+                            <div className={styles.menutitle}>Logout</div>
+                            <img src={vector} alt="work-out" className={styles.vectorimg} />
                         </div>
                     </div>
                 </div>
 
-                <div className='right-containe'>
+                <div>
                     <div>
-                        <img src={profiles} alt="work-out" className='profiles-img2' />
+                        <img src="https://static.cure.fit/assets/images/user-default.png" alt="work-out" className={styles.profilesimg2} />
                     </div>
 
-                    <div className="detail-container flex">
+                    <div className={`${styles.detailcontainer} ${styles.flex}`}>
                         <div>
-                            <div className='inner-box'>
-                                <p className='name-title'>NAME</p>
-                                <p className='name-details'>Suhail Shaikh</p>
-                                <div className='hr-lines'></div>
+                            <div className={styles.innerbox}>
+                                <p className={styles.nametitle}>NAME</p>
+                                <p className={styles.namedetails}>{user.firstname}</p>
+                                <div className={styles.hrlines}></div>
                             </div>
 
-                            <div className='inner-box'>
-                                <p className='name-title'>GENDER</p>
-                                <div className="flex">
-                                    <p className='name-details'>Male</p>
-                                    <img src={men} alt="work-out" className='men-img' />
-                                    <img src={woman} alt="work-out" className='woman-img' />
+                            <div className={styles.innerbox}>
+                                <p className={styles.nametitle}>GENDER</p>
+                                <div className={styles.flex}>
+                                    <p className={styles.namedetails}></p>
+                                    <div className={styles.gendericons}>
+                                        <img src={men} alt="work-out" className={styles.menimg} />
+                                        <img src={woman} alt="work-out"/>
+                                    </div>
                                 </div>
-                                <div className='hr-lines'></div>
+                                <div className={styles.hrlines}></div>
                             </div>
 
-                            <div className='inner-box'>
-                                <p className='name-title'>EMAIL</p>
-                                <p className='name-details'>mail@gmail.com</p>
-                                <div className='hr-lines'></div>
+                            <div className={styles.innerbox}>
+                                <p className={styles.nametitle}>EMAIL</p>
+                                <p className={styles.namedetails}>{user.email}</p>
+                                <div className={styles.hrlines}></div>
                             </div>
 
                         </div>
 
-                        <div className='box-2'>
-                            <div className='inner-box'>
-                                <p className='name-title'>PHONE NUMBER</p>
-                                <p className='name-details'>+91 - 9876543210</p>
-                                <div className='hr-lines'></div>
+                        <div className={styles.box2}>
+                            <div className={styles.innerbox}>
+                                <p className={styles.nametitle}>PHONE NUMBER</p>
+                                <p className={styles.namedetails}>+91 - 9876543210</p>
+                                <div className={styles.hrlines}></div>
                             </div>
 
-                            <div className='inner-box'>
-                                <p className='name-title'>Date Of Birth</p>
-                                <p className='name-details'>MM/DD/YYYY</p>
-                                <div className='hr-lines'></div>
+                            <div className={styles.innerbox}>
+                                <p className={styles.nametitle}>Date Of Birth</p>
+                                <p className={styles.namedetails}>MM/DD/YYYY</p>
+                                <div className={styles.hrlines}></div>
                             </div>
 
-                            <div className='inner-box'>
-                                <p className='name-title'>WORK EMAIL</p>
-                                <div className="flex">
-                                    <p className='name-details'>Add Work Email</p>
-                                    <p className='add-btn'>Add</p>
+                            <div className={styles.innerbox}>
+                                <p className={styles.nametitle}>WORK EMAIL</p>
+                                <div className={styles.flex}>
+                                    <p className={styles.namedetails}>Add Work Email</p>
+                                    <p className={styles.addbtn}>Add</p>
                                 </div>
-                                <div className='hr-lines'></div>
+                                <div className={styles.hrlines}></div>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <button className='discard-btn'>DISCARD</button>
-                        <button className='save-btn'>SAVE</button>
+                        <button className={styles.discardbtn}>DISCARD</button>
+                        <button className={styles.savebtn}>SAVE</button>
                     </div>
                 </div>
             </div>
