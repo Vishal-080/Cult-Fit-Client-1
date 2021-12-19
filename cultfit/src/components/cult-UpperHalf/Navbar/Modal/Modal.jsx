@@ -102,7 +102,7 @@ export const ModalInFunctionalComponent = () => {
       </> : <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>}
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
-        <button id="cancel" onClick={setModalIsOpenToFalse}>
+        <button id="cancelinlogin" onClick={setModalIsOpenToFalse}>
           <img src={cross} alt="cross-icon" />
         </button>
         <Loginform closeModal={setModalIsOpenToFalse} />
@@ -133,7 +133,7 @@ export const ModalInFunctionalComponent = () => {
       <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
-        <button id="cancel" onClick={setModalIsOpenToFalse}>
+        <button id="cancelinlogin" onClick={setModalIsOpenToFalse}>
           <img src={cross} alt="cross-icon" />
         </button>
         <Socialpage />
@@ -144,7 +144,7 @@ export const ModalInFunctionalComponent = () => {
       <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
-        <button id="cancel" onClick={setModalIsOpenToFalse}>
+        <button id="cancelinlogin" onClick={setModalIsOpenToFalse}>
           <img src={cross} alt="cross-icon" />
         </button>
         <Signupform />

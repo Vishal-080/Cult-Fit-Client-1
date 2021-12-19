@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-#signin-render #cancel {
+#signin-render #cancelinlogin {
   background-color: white;
   color: rgba(0, 0, 0, 0.562);
   height: 10px;
