@@ -27,7 +27,7 @@ export const CentreBooking = () => {
         centreid: obj.centre,
         sessionid: "",
         slotsid: "",
-        date: ""
+        date: date
     })
 
     useEffect(() => {
