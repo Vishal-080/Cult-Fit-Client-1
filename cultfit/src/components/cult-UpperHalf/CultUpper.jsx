@@ -7,8 +7,27 @@ import forward from "./images/forward.svg";
 import timer from "./images/timer.svg";
 
 import topimgsmall from "./images/topimgsmall.svg";
+import axios from "axios";
+import { shallowEqual, useSelector } from "react-redux";
+import { useState } from "react";
 
 export const CultUpper = () => {
+
+  const { isAuth,user } = useSelector(store => store.auth, shallowEqual)
+  const [trials,setTrials] = useState(null)
+
+  if(isAuth){
+    axios
+    .get(`http://localhost:7765/users/${user._id}`, { withCredentials: true })
+    .then(res => {
+      setTrials(res.data.user.trials)
+    })
+    .catch(err => {
+        console.log("Not properly authenticated!");
+        console.log("Error", err);
+    })
+  }
+
   return (
     <div>
       <Adimg>
@@ -44,6 +63,7 @@ export const CultUpper = () => {
             </div>
             <div className="rounded2"></div>
           </div>
+          
         </div>
       </Freetrial>
       <VideoContainer>
