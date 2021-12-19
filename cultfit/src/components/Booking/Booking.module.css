@@ -1,12 +1,7 @@
-@font-face {
-    font-family: 'brandon';
-    src: url("image/font.otf") format("opentype");
-}
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'brandon', serif;
 }
 
 .bookingContainer{
@@ -20,20 +15,24 @@
     display: flex;
 }
 
+.flexs{
+    display: flex;
+    border-bottom:3px solid #EFEFEF;
+}
+
 .workoutImage{
     width: 588px;
     height: 570px;
-    margin-top: 58px;
     left: 0px;
     top: 0px;
     order: 0;
     position: sticky;
     vertical-align: middle;
+    margin-right: 100px;
 }
 
 
 .linksContainer{
-    margin-left: 100px;
     margin-top: 81px;
 }
 
@@ -48,7 +47,6 @@
 }
 
 .yogaTitles{
-    width: 179px;
     height: 40px;
     font-style: normal;
     font-weight: bold;
@@ -57,7 +55,6 @@
     color: #000000;
     align-items: center;
     margin-top: 55px;
-    margin-left: 100px; 
     margin-right: 250px;
     margin-bottom: 8px;
 }
@@ -70,7 +67,6 @@
     font-size: 14px;
     line-height: 20px;
     color: #A2A2A2;
-    margin-left: 100px;
 }
 
 .yogaDate{
@@ -81,7 +77,6 @@
     font-size: 14px;
     line-height: 20px;
     margin-top: 8px;
-    margin-left: 100px;
     color: #333333;
 }
 
@@ -96,8 +91,7 @@
 }
 
 .cancelDiv{
-    margin-top: 110px;
-    margin-left: 100px;
+    margin-top: 62px;
 }
 
 .cancelImage{
@@ -118,7 +112,6 @@
 
 .kitDiv{
     margin-top: 27px;
-    margin-left: 100px;
 }
 
 .kitTitle{
@@ -149,7 +142,6 @@
 .kitName{
     height: 40px;
     width: 53px;
-    font-family: Brandon Text;
     font-style: normal;
     font-weight: 390;
     font-size: 14px;
@@ -161,7 +153,6 @@
 
 .saftyDiv{
     margin-top: 60px;
-    margin-left: 100px;
 }
 
 .saftyTitle{
@@ -225,7 +216,6 @@
 
 .hrLine{
     margin-top: 50px;
-    margin-left: 100px;
     height: 0px;
     width: 486px;
     left: 0px;
@@ -236,7 +226,6 @@
 
 .locationDiv{
     margin-top: 60px;
-    margin-left:100px;
 }
 
 .locationTitle{
@@ -278,4 +267,9 @@
     color: #4C4C4C;
     margin-top: 30px;
     margin-bottom: 50px;
+}
+
+
+.timedetails{
+    padding-bottom:50px;
 }

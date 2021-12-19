@@ -10,7 +10,6 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import "./locationmodal.css";
 import { SET_LOCATION } from "../../../../Store/GeneralStore/actionTypes";
 import { Actions } from "../../../../Store/GeneralStore/actions";
-import { Redirect } from "react-router-dom";
 
 const customStyles = {
   content: {
@@ -33,7 +32,6 @@ export const LocationModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const dispatch = useDispatch();
   const { location } = useSelector(store => store.general, shallowEqual)
-  const { isAuth,user } = useSelector(store => store.auth, shallowEqual)
 
   const setModalIsOpenToTrue = () => {
     setModalIsOpen(true);

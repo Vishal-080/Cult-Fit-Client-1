@@ -31,6 +31,7 @@ export const CentreBooking = () => {
         date: date
     })
 
+
     useEffect(() => {
         fetchCenter()
     }, [obj.centre])
@@ -68,7 +69,7 @@ export const CentreBooking = () => {
             .then(res => {
                 console.log("data", res.data)
                 setCentre(res.data.centre)
-                localStorage.setItem("currentcentre",res.data.centre.centrename)
+                localStorage.setItem("currentcentre", res.data.centre.centrename)
             })
             .catch(err => {
                 console.log("Not properly authenticated!");
@@ -99,6 +100,7 @@ export const CentreBooking = () => {
             .then(res => {
                 console.log("data", res.data)
                 setsessionBookModal(true)
+                BookDataFunction()
             })
             .catch(err => {
                 console.log("Not properly authenticated!");
@@ -129,15 +131,32 @@ export const CentreBooking = () => {
             ...bookingdetails,
             date: date
         })
+
+        setDate(date)
     }
 
-    const Directtolanding = () => {
+    const DirecttoBookingDetails = () => {
         setsessionBookModal(false)
-        history.push("/")
+        history.push("/bookingdetails")
     }
 
-    const makepayment=()=>{
+    const BookDataFunction = () => {
+        console.log("BookDataFunction")
+        const BookData = {
+            sessiontype: sessiontype,
+            date: date,
+            time: time,
+            address: centre.address
+        }
+
+        localStorage.setItem('BookData', JSON.stringify(BookData));
+    }
+
+    const makepayment = () => {
         console.log(bookingdetails)
+
+
+        BookDataFunction()
         localStorage.setItem('bookingdetails', JSON.stringify(bookingdetails));
         history.push("/desktop")
     }
@@ -162,7 +181,7 @@ export const CentreBooking = () => {
                             <p className={styles.linkshow}>{centre.centrename}</p>
                         </div>
 
-                        <div className={styles.flex}>
+                        <div className={styles.flexs}>
                             <div onClick={() => {
                                 setDate("2021-12-19")
                                 handleChangeofDate("2021-12-19")
@@ -284,7 +303,7 @@ export const CentreBooking = () => {
                             <img src="/workoutimages/appstore.svg" />
                             <img src="/workoutimages/playstore.svg" />
                         </div>
-                        <button className={styles.okbtn} onClick={Directtolanding}>OK</button>
+                        <button className={styles.okbtn} onClick={DirecttoBookingDetails}>OK</button>
                     </div>
                 </div>
             </div>

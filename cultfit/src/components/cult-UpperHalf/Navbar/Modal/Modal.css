@@ -7,6 +7,7 @@
   /* identical to box height, or 143% */
   border:none;
   background:white;
+  cursor: pointer;
 }
 
 #signin-render #cancel {
@@ -38,6 +39,7 @@
   font-weight: 390;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
 }
 
 #signin-render #sign-up {
@@ -57,6 +59,7 @@
   color: rgb(250, 87, 115);
   text-decoration: underline;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 /* css for login form begins from here */
@@ -211,6 +214,7 @@
   color: white;
   border-radius: 100px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 #signupform div {
@@ -259,6 +263,7 @@
   font-weight: 420;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
 }
 
 
@@ -338,4 +343,9 @@
 
 .orders img{
   margin-right: 25px;
+}
+
+
+.AlreadyRegister{
+  margin-left: 35px;
 }

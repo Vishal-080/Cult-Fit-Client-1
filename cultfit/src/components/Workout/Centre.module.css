@@ -16,6 +16,14 @@
     display: flex;
 }
 
+.flexs{
+    display: flex;
+}
+
+.flexs>div{
+    cursor: pointer;
+}
+
 .imagesection{
     width: 600px;
     margin-top: 164px !important;
@@ -732,4 +740,5 @@
     font-size: 20px;
     line-height: 28px;
     color: #000000;
+    cursor: pointer;
 }

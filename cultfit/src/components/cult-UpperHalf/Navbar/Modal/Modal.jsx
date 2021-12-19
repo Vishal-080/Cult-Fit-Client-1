@@ -130,7 +130,7 @@ export const ModalInFunctionalComponent = () => {
     </>
   ) : social ? (
     <>
-      <button id="login-button" onClick={setModalIsOpenToTrue}>login</button>
+      <button id="login-button" onClick={setModalIsOpenToTrue}>Login</button>
 
       <Modal id="signin-render" style={customStyles} isOpen={modalIsOpen}>
         <button id="cancel" onClick={setModalIsOpenToFalse}>

@@ -75,7 +75,7 @@ export const Signupform = () => {
       <input value={userData.password} name="password" onChange={handlechange} type="password" placeholder="*******" />
       <input value={userData.password} type="password" placeholder="Confirm Password" />
 
-      {signuperror ? <p>Already registered, please go to login</p> : ""}
+      {signuperror ? <p className="AlreadyRegister">Already registered, please go to login</p> : ""}
 
       <button onClick={normalSignUp}>Continue</button>
       <div>
