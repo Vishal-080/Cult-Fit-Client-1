@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const MainContainer = styled.div`
   background-color: #000;
+  @media screen and (max-width: 400px) {
+    display:none;
+  }
 `;
 
 export const Footer2 = () => {

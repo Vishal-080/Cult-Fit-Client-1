@@ -17,23 +17,23 @@ export const Navbar = () => {
                     <p>CULT</p>
                 </Link>
             </div>
-            <div>
+            <div className={styles.displaynone}>
                 <img src="/navbar_icons/Video.svg" alt="" />
                 <p>LIVE</p>
             </div>
-            <div>
+            <div className={styles.displaynone}>
                 <img src="/navbar_icons/eaticon.svg" alt="" />
                 <p>EAT</p>
             </div>
-            <div>
+            <div className={styles.displaynone}>
                 <img src="/navbar_icons/Mind.svg" alt="" />
                 <p>MIND</p>
             </div>
-            <div>
+            <div className={styles.displaynone}>
                 <img src="/navbar_icons/care.svg" alt="" />
                 <p>CARE</p>
             </div>
-            <div>
+            <div className={styles.displaynone}>
                 <img src="/navbar_icons/Bag.svg" alt="" />
                 <p>STORE</p>
             </div>

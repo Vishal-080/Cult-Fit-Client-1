@@ -75,3 +75,34 @@
 .social-logo{
     margin-left: 500px;
 }
+
+
+
+@media screen and (max-width: 400px) {
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .footer-other-links{
+        display: none;
+    }
+
+    .social-logo{
+        display: none;
+    }
+
+    .footer-link{
+        display: none;
+    }
+
+    .footer-links{
+        display: none;
+    }
+
+    .footer-text{
+        margin-left: 0px;
+        width: 80%;
+        margin: auto;
+    }
+}

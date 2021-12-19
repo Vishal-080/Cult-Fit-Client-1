@@ -172,7 +172,7 @@ const Workout = () => {
                                 </div>
                             </div>
                             <div className="right-container">
-                                <img src="/workoutimages/delhi.svg" alt="" />
+                                <img src={`/image/${location}.jpg`} alt="" />
                             </div>
                         </div>
                     </div>

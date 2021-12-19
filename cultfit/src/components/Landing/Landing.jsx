@@ -7,7 +7,6 @@ import { LOGIN_FAILURE, LOGIN_SUCCESS } from "../../Store/AuthStore/actionTypes"
 import Footer from "../Footer/Footer";
 import { SliderCardHomePAge } from './Cards/Cards';
 import { Intro } from "./Intro/Intro";
-import { Navbar } from "./Navbar/Navbar";
 import { StaticData } from "./Static/Static";
 
 export const LandingPage = () => {
@@ -44,7 +43,6 @@ export const LandingPage = () => {
 
     return (
         <>
-            <Navbar />
             <Intro />
             {sliding?.map((e) => (
                 e._id !== "6155946c79e9ef42d0369655" ? <SliderCardHomePAge key={e._id} {...e} /> : ""

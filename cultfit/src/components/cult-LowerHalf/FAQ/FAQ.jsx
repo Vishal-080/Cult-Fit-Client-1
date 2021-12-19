@@ -6,13 +6,7 @@ const Container = styled.div`
   padding: 50px 120px;
 
   @media screen and (max-width: 400px) {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0px;
-    height:auto;
+    display:none;
   }
 `;
 
@@ -189,14 +183,9 @@ const TextDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  border: 1px solid red;
 
   @media screen and (max-width: 400px) {
-    margin-top: 50px;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    
+    display:none;
   }
 `;
 
@@ -204,7 +193,6 @@ const InnerTextDiv = styled.div`
   width: 572px;
   font-size: 12px;
   line-height: 20px;
-  border: 1px solid blue;
 
   @media screen and (max-width: 400px) {
     width: 100%;

@@ -17,9 +17,6 @@
     /* border:1px solid red; */
 }
 
-.Navbar>div:nth-child(1) {
-  /* margin-right: 20%; */
-}
 
 .Navbar>div:nth-child(2) {
     display: flex;
@@ -57,3 +54,36 @@
   .Navbar>div:nth-child(3)>div p{
       margin-left:8px;
   }
+
+
+  
+@media screen and (max-width: 400px) {
+
+  .Navbar{
+    justify-content:unset;
+    width: 90%;
+    padding:0px 20px;
+  }
+
+  .Navbar>div:nth-child(2)>div {
+    margin-right: 10px;
+  }
+
+  .Navbar>div:nth-child(3)>div {
+    margin-right: 10px;
+  }
+
+
+  .Navbar>div:nth-child(2){
+    width:30%;
+  }
+
+  /* .Navbar>div:nth-child(1) {
+    margin-left: 0px;
+  } */
+
+  .displaynone{
+    display: none;
+  }
+
+}
