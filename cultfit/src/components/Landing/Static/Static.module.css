@@ -35,3 +35,18 @@
     font-weight: bold;
     color: #908E8E;
   }
+
+  
+  @media only screen and (max-width: 768px) {
+
+    .staticdata{
+      display: none;
+    }
+
+    .be_better_section{
+      display: none;
+    }
+ 
+ 
+  }
+
