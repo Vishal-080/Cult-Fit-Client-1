@@ -109,6 +109,185 @@ npm i
   ```bash
   npm run server
   ```
+  
+    ## _Blog of This Project(Know more about the project)_
+
+  [Medium](https://medium.com/@NagendraPatil/building-cult-fit-clone-in-6-days-c6a72ad731a0)
+
+<br/>
+
+## **_Snapshots of the Project_**
+
+- LANDING PAGE
+
+   On the home page, users can see cool animation effects and gifs which are self-explanatory.
+   All of this is done using custom CSS and Styled Component.
+
+  <br/>
+  
+   <img align="center" src="https://miro.medium.com/max/700/1*5gTe7bzsOyeRn5vJUWIJIw.png" alt="Landing page"/>
+
+  <br/>
+
+- CULT PAGE
+
+   Here, Users can see how many free trials are left in their account which is updated dynamically
+   once booked (state management done using Redux) and other offers. Also, they can select the genres of exercise to move ahead.
+   <br/>
+   <br/>
+<img align="center" src="https://miro.medium.com/max/700/1*EA6jvOhp8UlC-l8_tZ7CVQ.png" alt="Cult Page"/>
+
+<br/>
+
+- LOGIN-IN, SIGN-UP, and REGISTER
+      
+   On clicking log in, a modal will open up where the user can choose the appropriate method to proceed further.
+   
+   <br/>
+   <br/>
+<img align="center" src="https://miro.medium.com/max/500/1*oybB8izfdvZoaML0eEdSww.png" alt="Sign In/Sign Up page"/>
+
+  <br/>
+  <br/>
+
+<img src="https://miro.medium.com/max/500/1*bcKW0bvJTwT_F5XiZnafTg.png" alt="Sign In/Sign Up page"/>
+
+  <br/>
+  <br/>
+
+<img src="https://miro.medium.com/max/500/1*DSFdhxvLk_3baFziDvTRug.png" alt="Sign In/Sign Up page"/>
+    
+  <br/>
+  <br/>
+  
+  
+- SELECT LOCATION
+
+   Users can select cities from those given in this modal. Once done, respective training locations, their address, 
+   and other information will be fetched from DB and is displayed during session booking. 
+   
+  <br/>
+  <br/>
+
+    <img src="https://miro.medium.com/max/700/1*Z3Y1Z61P0gQhX6I0LXi0Ag.png">
+
+  <br/>
+  <br/>
+  
+
+- PROFILE
+   
+   On registering, a user profile will be created as displayed below
+
+   <br/>
+   <br/>
+
+    <img src="https://miro.medium.com/max/700/1*P5PfFmHpb5M9mvvYOkeiZg.png"/>
+
+   <br/>
+   <br/>
+
+- WORKOUT
+   
+   On clicking type of workout, the user will be redirected to that page. Here, I clicked on yoga so the following page
+   will be displayed which contains the details of that particular workout. From here user can book a slot
+
+   <br/>
+   <br/>
+
+   <img src = "https://miro.medium.com/max/700/1*eaUCZavdd8ynSBUeI7oxqQ.png" />
+
+   <br/>
+   <br/>
+   
+- SELECT CENTER
+   
+   On clicking “book class” on the workout page user will be asked to choose a preferred center next to which details of 
+   the center such as address, slot timings, image of the training center will appear. All this data is fetched from the center collection in our DB.
+
+   <br/>
+   <br/>
+
+  <img src="https://miro.medium.com/max/700/1*C0nvAZWQ25PoiJT0q4bn_g.png">
+
+   <br/>
+   <br/>
+
+- CENTER
+   
+   Here the user is asked to select the date and time of the slot that is to be booked. After which a modal appears.
+
+   <br/>
+   <br/>
+
+  <img src="https://miro.medium.com/max/500/1*9OHDmg08vphJoagxlRrzVg.png">
+
+   <br/>
+   <br/>
+
+  <img src="https://miro.medium.com/max/500/1*uLcMyti3NtBYTleG-5kMwA.png">
+   <br/>
+   <br/>
+  
+- MAKE PAYMENT
+   
+   In payment page user can review the price and proceed to payment
+   
+   <br/>
+   <br/>
+
+  <img src="https://miro.medium.com/max/700/1*SiRVDFtmx5fJMb504YSp3w.png">
+
+   <br/>
+   <br/>
+  
+- PAYMENT
+   
+   The following steps will lead to the payment.
+   
+   <br/>
+   <br/>
+
+   Select the mode of payment
+   
+   <br/>
+  <img src="https://miro.medium.com/max/500/1*iJXgtJGRne3jkMLwEDNr5g.png">
+
+   <br/>
+   <br/>
+   
+   Enter the mobile number to verify Paytm account and then confirm with OTP received.
+  
+   <br/>
+  <img src="https://miro.medium.com/max/500/1*uWUbTeG1CR4u75IgH7Mhzw.png">
+   <br/>
+  <img src="https://miro.medium.com/max/500/1*yM25a8Hv6QQiTZv7g0yqvw.png">
+
+   <br/>
+   <br/>
+
+- PAYMENT SUCCESSFUL
+   
+   On successful payment, user will be redirected to following pages
+   
+   <br/>
+   <br/>
+
+  <img src="https://miro.medium.com/max/700/1*x3C1xqIE_jNB6wBxmu3DBQ.png">
+   
+   <br/>
+  <img src="https://miro.medium.com/max/700/1*iTx6OPrIbh5pLRQVzygEZg.png">
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+
+ 
+
+
+
 
 # Contributors
 - **Pratik Jadhav** [pratikjadhav080](https://github.com/pratikjadhav080)
