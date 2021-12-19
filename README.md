@@ -8,15 +8,15 @@ In this project we have tried to make a look alike clone of CultFit. With our ef
 
 - Book Workout Session By Categories
 - Choose Workout Center By Location
-- Redeem Free Workout Trials 
+- Free Workout Trials 
 - Sign in / Sign up with email and Google
-- User can browse the services provided by cultfit and manage subscriptions
-- User can view Center and Buy Passes
+- Responsive Pages
 
 ## Tech Stack
 
 #### **Frontend**
-
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://www.javascript.com/)
 - [Reactjs](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
 - [Redux-Thunks](https://redux.js.org/usage/writing-logic-thunks)
@@ -50,7 +50,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Follow the following steps to get development environment running.
 
-1. Clone 'Seekho-Project' repository from GitHub
+1. Clone 'CultFit' repository from GitHub
 
    ```bash
    git clone https://github.com/pratikjadhav080/Cult-Fit-Client
@@ -59,7 +59,7 @@ Follow the following steps to get development environment running.
    _or using ssh_
 
    ```bash
-   git clone git@github.com:vcow10kar/pratikjadhav080/Cult-Fit-Client
+   git clone git@github.com:pratikjadhav080/Cult-Fit-Client
    ```
 
 1. Install node modules
