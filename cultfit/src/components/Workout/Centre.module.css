@@ -17,9 +17,9 @@
 }
 
 .imagesection{
-    position: fixed;
     width: 600px;
     margin-top: 164px !important;
+    margin-bottom: 100px;
 }
 .workOutimg{
     width: 486px;;
@@ -27,12 +27,13 @@
     left: 0px;
     top: 0px;
     order: 0;
+    position: sticky;
+    vertical-align: middle;
 }
 
 .bodysection{
     width: 600px;
     margin-top: 164px !important;
-    margin-left: 612px;
 }
 
 
@@ -100,6 +101,7 @@
     color: #36BA45;
     background-color: white;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .slotsDiv button:hover{

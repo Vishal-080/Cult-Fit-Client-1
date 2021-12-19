@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Actions } from "../../Store/AuthStore/action";
 import { LOGIN_FAILURE, LOGIN_SUCCESS } from "../../Store/AuthStore/actionTypes";
+import Footer from "../Footer/Footer";
 import { SliderCardHomePAge } from './Cards/Cards';
 import { Intro } from "./Intro/Intro";
 import { Navbar } from "./Navbar/Navbar";
@@ -49,6 +50,7 @@ export const LandingPage = () => {
                 e._id !== "6155946c79e9ef42d0369655" ? <SliderCardHomePAge key={e._id} {...e} /> : ""
             ))}
             <StaticData />
+            <Footer/>
         </>
     );
 };

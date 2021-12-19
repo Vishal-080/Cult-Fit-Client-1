@@ -16,9 +16,9 @@
 }
 
 .image-section {
-  position: fixed;
   width: 600px;
   margin-top: 164px;
+  margin-bottom: 100px;
 }
 .workOut-img {
   width: 486px;
@@ -26,12 +26,14 @@
   left: 0px;
   top: 0px;
   order: 0;
+  position: sticky;
+  vertical-align: middle;
 }
 
 .body-section {
   width: 600px;
   margin-top: 164px;
-  margin-left: 612px;
+  margin-bottom: 100px;
 }
 
 .link-show {
@@ -380,6 +382,7 @@
   margin: 40px 0px 0px 70%;
   color: #ffffff;
   border: none;
+  cursor: pointer;
 }
 
 /* modal */

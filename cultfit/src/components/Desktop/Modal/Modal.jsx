@@ -12,8 +12,8 @@ import "./payment.css";
 const customStyles = {
   content: {
     width: "558px",
-    height: "635px",
-    top: "60%",
+    height: "535px",
+    top: "55%",
     left: "50%",
     right: "auto",
     bottom: "auto",
