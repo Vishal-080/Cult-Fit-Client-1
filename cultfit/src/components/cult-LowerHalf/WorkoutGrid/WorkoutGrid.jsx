@@ -14,6 +14,15 @@ const WorkoutHeading = styled.div`
   line-height: 28px;
   font-weight: bold;
   margin: 75px auto;
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+    font-style: normal;
+    font-weight: 420;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 32px auto;
+  }
 `;
 
 const Grid = styled.div`
@@ -23,6 +32,12 @@ const Grid = styled.div`
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   grid-gap: 24px;
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+    height: inherit;
+    margin: 32px auto;
+  }
 `;
 
 const GridItem = styled.div`
@@ -49,6 +64,28 @@ const GridItem = styled.div`
     min-width: 288px;
     min-height: 188px;
   }
+
+  @media screen and (max-width: 400px) {
+    width: 40%;
+    height: inherit;
+
+    & p {
+      position: absolute;
+      width: 94px;
+      height: 20px;
+      font-style: normal;
+      font-weight: 420;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    & img {
+      position: relative;
+      border-radius: 5px;
+      width: 80%;
+      height: 100%;
+    }
+  }
 `;
 
 /******** Code starts from here  ********/
@@ -59,30 +96,27 @@ const workouts = [
   "Dance Fitness",
   "S&C",
   "HRX Workout",
-  "Boxing"
+  "Boxing",
 ];
 
-
-
 export const WorkoutGrid = () => {
-
   const dispatch = useDispatch();
-  const history=useHistory()
-  
+  const history = useHistory();
+
   const setSessionType = (el) => {
-    dispatch(Actions(SET_SESSIONTYPE, el))
-    history.push(`/sessiontype/${el}`)
+    dispatch(Actions(SET_SESSIONTYPE, el));
+    history.push(`/sessiontype/${el}`);
     // return <Redirect to={} />
-  }
+  };
 
   return (
     <>
       <WorkoutHeading>WORKOUTS</WorkoutHeading>
       <Grid>
         {workouts.map((el, i) => (
-          <GridItem key={i} onClick={()=>setSessionType(el)}>
-              <p>{el}</p>
-              <img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
+          <GridItem key={i} onClick={() => setSessionType(el)}>
+            <p>{el}</p>
+            <img src={`/workoutgrid_img/grid${i + 1}.svg`} alt={el} />
           </GridItem>
         ))}
       </Grid>

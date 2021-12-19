@@ -501,7 +501,7 @@ const Elite = styled.div`
     justify-content: space-between;
   }
   .mini-heading {
-    width: 180px;
+    width: 280px;
     height: 22px;
     color: #ffffff;
     margin: 60px auto;

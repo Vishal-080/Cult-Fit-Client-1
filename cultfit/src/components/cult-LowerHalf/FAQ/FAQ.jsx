@@ -2,13 +2,28 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #f4f4fe;
-  height: 1945px;
+  // height: 1943px;
   padding: 50px 120px;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    height:auto;
+  }
 `;
 
 const FAQContainer = styled.div`
   width: 1200px;
   margin: auto;
+
+  @media screen and (max-width: 400px) {
+    width: 80%;
+    margin: auto;
+  }
 `;
 
 const Row1 = styled.div`
@@ -21,6 +36,13 @@ const FaqTitle = styled.div`
   font-size: 30px;
   font-weight: bold;
   line-height: 40px;
+
+  @media screen and (max-width: 400px) {
+    font-style: normal;
+    font-weight: 420;
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 const SeeAllTitle = styled.div`
@@ -28,6 +50,13 @@ const SeeAllTitle = styled.div`
   font-weight: bold;
   line-height: 20px;
   color: #ff3278;
+
+  @media screen and (max-width: 400px) {
+    font-style: normal;
+    font-weight: 390;
+    font-size: 12px;
+    line-height: 20px;
+  }
 `;
 
 const Row2 = styled.div`
@@ -37,6 +66,10 @@ const Row2 = styled.div`
   font-size: 18px;
   line-height: 30px;
   color: #888e9e;
+
+  @media screen and (max-width: 400px) {
+    display: none !important;
+  }
 `;
 
 const Row3 = styled.div`
@@ -50,6 +83,13 @@ const Row3 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media screen and (max-width: 400px) {
+    font-style: normal;
+    font-weight: 390;
+    font-size: 13px;
+    line-height: 20px;
+  }
 `;
 
 const InnerDiv = styled.div`
@@ -60,6 +100,10 @@ const InnerDiv = styled.div`
   align-items: center;
   padding: 0px;
   height: 30px;
+  // border:1px solid red;
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const InnerDivLeft = styled.div`
@@ -100,6 +144,16 @@ const Answer = styled.div`
   font-size: 16px;
   line-height: 20px;
   color: #6a6a6a;
+
+  @media screen and (max-width: 400px) {
+    font-style: normal;
+    font-weight: 390;
+    font-size: 12px;
+    line-height: 20px;
+    width: 100%;
+    margin-left: 0px;
+    height: 160px;
+  }
 `;
 
 const YesNoDiv = styled.div`
@@ -115,6 +169,10 @@ const YesNoDiv = styled.div`
   font-style: normal;
   font-weight: 390;
   justify-content: space-between;
+
+  @media screen and (max-width: 400px) {
+    margin: 23px 0 23px 0px;
+  }
 `;
 
 const Yes = styled.div`
@@ -131,12 +189,38 @@ const TextDiv = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  border: 1px solid red;
+
+  @media screen and (max-width: 400px) {
+    margin-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
 `;
 
 const InnerTextDiv = styled.div`
-  width: 588px;
+  width: 572px;
   font-size: 12px;
   line-height: 20px;
+  border: 1px solid blue;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    font-style: normal;
+    font-weight: 390;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 23px;
+    height: 302px;
+  }
+`;
+
+const None = styled.div`
+  @media (max-width: 400px) : {
+    display: "none";
+  }
 `;
 
 export const FAQ = () => {
@@ -345,7 +429,7 @@ export const FAQ = () => {
             world of workouts.
           </InnerTextDiv>
         </TextDiv>
-        <TextDiv>
+        <TextDiv className="None">
           <InnerTextDiv>
             <p style={{ color: "#000000", fontWeight: "bold", marginTop: "0" }}>
               Which Are The Best Gyms Near Me?
