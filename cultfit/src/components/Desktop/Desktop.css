@@ -10,18 +10,22 @@
 }
 
 
-.desktop-container{
+.desktopcontainer{
     width: 1200px;
     margin: auto;
 }
 
 .order-container{
     margin-top: 100px;
-    margin-left: 20px;
 }
 
 .flex{
     display: flex;
+}
+
+.flexcontainer{
+    display: flex;
+    justify-content: space-between;
 }
 
 .order-title{
@@ -70,7 +74,6 @@
 
 .location-container{
     margin-top: 166px;
-    margin-left: 324px;
 }
 .location-img{
     margin-top: 18px;
@@ -85,6 +88,7 @@
     line-height: 20px;
     align-items: center;
     color: #000000;
+    margin-top: 10px;
 }
 
 .center-details{
@@ -178,4 +182,6 @@
     color: white;
     margin-top: 32px;
     margin-left: 410px;
+    border:none;
+    cursor: pointer;
 }

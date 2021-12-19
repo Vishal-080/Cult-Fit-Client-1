@@ -1,5 +1,7 @@
 import { Switch, Route, Link } from 'react-router-dom'
+import Booking from '../components/Booking/Booking'
 import { Cult } from '../components/cult/Cult'
+import Desktop from '../components/Desktop/Desktop'
 import { LandingPage } from '../components/Landing/Landing'
 import Profile from '../components/profile/Profile'
 import { CentreBooking } from '../components/Workout/CentreBooking'
@@ -27,6 +29,17 @@ export const Allroutes = () => {
         <Route exact path="/centrebooking/:centre">
             <CentreBooking/>
         </Route>
+
+        <Route exact path="/desktop">
+            <Desktop/>
+        </Route>
+
+
+        <Route exact path="/bookingdetails">
+            <Booking/>
+        </Route>
+    
+
 
 
         <Route>

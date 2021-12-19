@@ -13,19 +13,21 @@ import { useState } from "react";
 
 export const CultUpper = () => {
 
-  const { isAuth,user } = useSelector(store => store.auth, shallowEqual)
-  const [trials,setTrials] = useState(null)
+  const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
+  const [trials, setTrials] = useState(null)
 
-  if(isAuth){
+
+  if (isAuth) {
     axios
-    .get(`http://localhost:7765/users/${user._id}`, { withCredentials: true })
-    .then(res => {
-      setTrials(res.data.user.trials)
-    })
-    .catch(err => {
+      .get(`http://localhost:7765/users/${user._id}`, { withCredentials: true })
+      .then(res => {
+        setTrials(res.data.user.trials)
+        localStorage.setItem('trials', res.data.user.trials);
+      })
+      .catch(err => {
         console.log("Not properly authenticated!");
         console.log("Error", err);
-    })
+      })
   }
 
   return (
@@ -47,23 +49,62 @@ export const CultUpper = () => {
         <div className="freetrial">Two Free Trials</div>
         <div className="freeclasses">Experience Cult classes for free</div>
         <div className="tickets">
-          <div className="ind-tickets" id="ind-tickets-redeemed">
-            <div className="rounded1"></div>
-            <div>
-              <h1>01</h1>
-              <button>Redeemed</button>
+          {isAuth? trials >= 2 ? <>
+            <div className="ind-tickets" id="ind-tickets-redeemed">
+              <div className="rounded1"></div>
+              <div>
+                <h1>01</h1>
+                <button>Redeemed</button>
+              </div>
+              <div className="rounded2"></div>
             </div>
-            <div className="rounded2"></div>
-          </div>
+            <div className="ind-tickets" id="ind-tickets-redeemed">
+              <div className="rounded1"></div>
+              <div>
+                <h1>02</h1>
+                <button>Redeemed</button>
+              </div>
+              <div className="rounded2"></div>
+            </div>
+          </> : <>
+            <div className="ind-tickets" id="ind-tickets-redeemed">
+              <div className="rounded1"></div>
+              <div>
+                <h1>01</h1>
+                <button>Redeemed</button>
+              </div>
+              <div className="rounded2"></div>
+            </div>
+            <div className="ind-tickets">
+              <div className="rounded1"></div>
+              <div>
+                <h1>02</h1>
+                <button>TRY FOR FREE</button>
+              </div>
+              <div className="rounded2"></div>
+            </div>
+
+          </> : <>
           <div className="ind-tickets">
-            <div className="rounded1"></div>
-            <div>
-              <h1>02</h1>
-              <button>TRY FOR FREE</button>
+              <div className="rounded1"></div>
+              <div>
+                <h1>01</h1>
+                <button>TRY FOR FREE</button>
+              </div>
+              <div className="rounded2"></div>
             </div>
-            <div className="rounded2"></div>
-          </div>
-          
+
+          <div className="ind-tickets">
+              <div className="rounded1"></div>
+              <div>
+                <h1>02</h1>
+                <button>TRY FOR FREE</button>
+              </div>
+              <div className="rounded2"></div>
+            </div>
+
+          </>}
+
         </div>
       </Freetrial>
       <VideoContainer>

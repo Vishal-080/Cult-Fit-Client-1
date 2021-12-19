@@ -8,7 +8,7 @@
   font-size: 20px;
 }
 
-#login-button {
+#loginbutton {
   color: inherit;
   background-color: inherit;
   border: none;
@@ -16,6 +16,7 @@
   margin-top: -20px;
   height: 150%;
   width: 100%;
+  cursor: pointer;
 }
 
 /* payment option css starts */
@@ -127,7 +128,7 @@
   width: 270px;
   height: 40px;
   margin-left: 150px;
-  margin-top: 200px;
+  margin-top: 100px;
 
   font-family: Brandon Text;
   font-style: normal;
@@ -194,6 +195,7 @@
   border-radius: 5px;
   border:none;
   visibility: hidden;
+  cursor: pointer;
 }
 
 /* otp page css */

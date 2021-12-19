@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Modal from "react-modal";
 
-import cross from "./images/cross.svg";
-
 import banglore from "./images/banglore.svg";
 import delhi from "./images/delhi.svg";
 import hyderabad from "./images/hyderabad.svg";

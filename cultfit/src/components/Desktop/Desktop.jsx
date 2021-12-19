@@ -6,9 +6,15 @@ import calender from './font/calender.svg';
 import {ModalInFunctionalComponent} from "./Modal/Modal";
 
 const Desktop = () => {
+
+    const bookingdetails= JSON.parse(localStorage.getItem('bookingdetails'));
+    const currentcentre =localStorage.getItem("currentcentre")
+
+    console.log(bookingdetails.date,currentcentre)
+
     return (
-        <div className='desktop-container'>
-            <div className="flex">
+        <div className='desktopcontainer'>
+            <div className="flexcontainer">
                 <div className='order-container'>
                     <div>
                         <p className='order-title'>Order Summary</p>
@@ -16,10 +22,6 @@ const Desktop = () => {
                     <div className='order-detail-container flex'>
                         <div>
                             <img src={WorkoutImg} alt="work-out" className='workOut-img' />
-                        </div>
-                        <div>
-                            <p className='order-detail'>Hatha Yoga</p>
-                            <p className='order-price'>420</p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +33,7 @@ const Desktop = () => {
                         </div>
                         <div>
                             <p className='center-title'> Preferred Center</p>
-                            <p className='center-details'>Cult Baani, Sector 56</p>
+                            <p className='center-details'>{currentcentre}</p>
                         </div>
                     </div>
                     <div className='hr-line'></div>
@@ -40,9 +42,8 @@ const Desktop = () => {
                         <div>
                             <div><img src={calender} alt="work-out" className='calender-img' /></div>
                         </div>
-                        <div>
-                            <p className='center-title'> 14th December 2021</p>
-                            <p className='center-details'>Today</p>
+                        <div >
+                            <p className='center-title'> {bookingdetails.date}</p>
                         </div>
                     </div>
                     <div className='hr-line'></div>

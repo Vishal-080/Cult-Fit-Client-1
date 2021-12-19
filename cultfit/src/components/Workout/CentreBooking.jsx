@@ -21,6 +21,7 @@ export const CentreBooking = () => {
     const [sessionid, setSessionid] = useState("")
     const [slotid, setSlotid] = useState("")
     const history = useHistory();
+    const trials = localStorage.getItem('trials');
 
     const [bookingdetails, setbookingdetails] = useState({
         userid: user._id,
@@ -67,6 +68,7 @@ export const CentreBooking = () => {
             .then(res => {
                 console.log("data", res.data)
                 setCentre(res.data.centre)
+                localStorage.setItem("currentcentre",res.data.centre.centrename)
             })
             .catch(err => {
                 console.log("Not properly authenticated!");
@@ -129,9 +131,15 @@ export const CentreBooking = () => {
         })
     }
 
-    const Directtolanding = () =>{
+    const Directtolanding = () => {
         setsessionBookModal(false)
         history.push("/")
+    }
+
+    const makepayment=()=>{
+        console.log(bookingdetails)
+        localStorage.setItem('bookingdetails', JSON.stringify(bookingdetails));
+        history.push("/desktop")
     }
 
     return (
@@ -155,7 +163,7 @@ export const CentreBooking = () => {
                         </div>
 
                         <div className={styles.flex}>
-                            <div onClick={() =>{
+                            <div onClick={() => {
                                 setDate("2021-12-19")
                                 handleChangeofDate("2021-12-19")
                             }} className={styles.dateDiv}>
@@ -248,10 +256,16 @@ export const CentreBooking = () => {
                                 </div>
 
                             </div>
-                            <div className={styles.bookbtn}>
-                                <button onClick={loggedInorNot} >BOOK FOR FREE</button>
-                            </div>
+                            {trials >= 2 ? <>
+                                <div className={styles.bookbtn}>
+                                    <button onClick={makepayment} >MAKE PAYMENT</button>
+                                </div>
 
+                            </> : <>
+                                <div className={styles.bookbtn}>
+                                    <button onClick={loggedInorNot} >BOOK FOR FREE</button>
+                                </div>
+                            </>}
                         </div>
                     </div>
                 </div>

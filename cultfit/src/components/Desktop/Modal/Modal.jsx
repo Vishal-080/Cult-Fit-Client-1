@@ -13,7 +13,7 @@ const customStyles = {
   content: {
     width: "558px",
     height: "635px",
-    top: "52%",
+    top: "60%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -51,7 +51,7 @@ export const ModalInFunctionalComponent = () => {
 
   return (val===true && val2===true )? (
     <>
-      <button id="login-button" onClick={setModalIsOpenToTrue}>
+      <button id="loginbutton" onClick={setModalIsOpenToTrue}>
         PROCEED TO PAY
       </button>
 
@@ -64,7 +64,7 @@ export const ModalInFunctionalComponent = () => {
     </>
   ) : (val===false && val2===true) ? (
     <>
-      <button id="login-button" onClick={setModalIsOpenToTrue}>
+      <button id="loginbutton" onClick={setModalIsOpenToTrue}>
         PROCEED TO PAY
       </button>
 
@@ -78,7 +78,7 @@ export const ModalInFunctionalComponent = () => {
   ) :
   (
     <>
-      <button id="login-button" onClick={setModalIsOpenToTrue}>
+      <button id="loginbutton" onClick={setModalIsOpenToTrue}>
         PROCEED TO PAY
       </button>
 
