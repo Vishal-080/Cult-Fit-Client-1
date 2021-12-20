@@ -5,7 +5,7 @@ import { LocationModal } from "../../cult-UpperHalf/Navbar/LocationModal/Locatio
 
 export const Navbar = () => {
     return <div className={styles.Navbar}>
-        <div>
+        <div id={styles.main_logo_home_page_div}>
             <Link to="/">
                 <img src="/navbar_icons/Cultfitlogo.svg" alt="" />
             </Link>

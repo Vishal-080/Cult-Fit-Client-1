@@ -11,10 +11,14 @@
     /* width: 100%; */
     z-index: 100;
     padding:0px 36px;
-    width:1440px;
+    width:1369px;
     font-style: normal;
     font-weight: 390;
     /* border:1px solid red; */
+}
+
+#main_logo_home_page_div{
+  width:180px;
 }
 
 
@@ -85,5 +89,6 @@
   .displaynone{
     display: none;
   }
+  
 
 }
