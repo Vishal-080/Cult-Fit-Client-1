@@ -10,6 +10,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import "./locationmodal.css";
 import { SET_LOCATION } from "../../../../Store/GeneralStore/actionTypes";
 import { Actions } from "../../../../Store/GeneralStore/actions";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const customStyles = {
   content: {
@@ -31,6 +32,7 @@ const customStyles = {
 export const LocationModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const dispatch = useDispatch();
+  const history = useHistory();
   const { location } = useSelector(store => store.general, shallowEqual)
 
   const setModalIsOpenToTrue = () => {
@@ -43,7 +45,7 @@ export const LocationModal = () => {
 
   const setLocation = (city) => {
     dispatch(Actions(SET_LOCATION, city))
-    window.location.href="http://localhost:3000"
+    history.push(`/`);
   }
 
   return (

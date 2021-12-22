@@ -1,9 +1,11 @@
 import './Workout.css';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { shallowEqual, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { Actions } from '../../Store/GeneralStore/actions';
+import { SET_CENTRE } from '../../Store/GeneralStore/actionTypes';
 
 const workoutData = {
     "Yoga": ["Yoga", "250", "/workoutimages/Yoga.png", "Flexibility | Stress reduction | Mental & Emotional Well Being", "Yoga", "Every class has an array of breathing techniques, a variety of asanas and meditation techniques. Helps in improving confidence & balance while gaining a stronger body in the process."],
@@ -20,7 +22,9 @@ const Workout = () => {
     const [data, setData] = useState(workoutData[obj.session])
     const [modal, setModal] = useState(false)
     const [centres, setCentres] = useState([])
-    const { sessiontype,location } = useSelector(store => store.general, shallowEqual)
+    const { sessiontype, location } = useSelector(store => store.general, shallowEqual)
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     console.log(sessiontype)
 
@@ -34,6 +38,12 @@ const Workout = () => {
                 console.log("Not properly authenticated!");
                 console.log("Error", err);
             })
+    }
+
+    const moveToCentre = (e) => {
+        dispatch(Actions(SET_CENTRE, e));
+        localStorage.setItem("currentcentre", e.centrename)
+        history.push(`/centrebooking/${e._id}`)
     }
 
     return (
@@ -154,7 +164,7 @@ const Workout = () => {
                     <div className="modal-body">
                         <div className="desktop-container">
                             <div className="left-container">
-                                <input type="text" placeholder='Search for centres'  />
+                                <input type="text" placeholder='Search for centres' />
                                 <div>
                                     {centres.map((e) => (
                                         <div className="centrediv">
@@ -162,11 +172,14 @@ const Workout = () => {
                                                 <h3>{e.centrename}</h3>
                                                 <p>{e.address}</p>
                                             </div>
-                                            <Link to={`/centrebooking/${e._id}`}>
+                                            <div onClick={()=>moveToCentre(e)}>
+                                                <p className='Select'>SELECT</p>
+                                            </div>
+                                            {/* <Link to={`/centrebooking/${e._id}`}>
                                                 <div>
                                                     <p>SELECT</p>
                                                 </div>
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     ))}
                                 </div>

@@ -3,20 +3,19 @@ import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from "./Centre.module.css"
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { ModalInFunctionalComponent } from '../cult-UpperHalf/Navbar/Modal/Modal';
+import { shallowEqual, useSelector } from "react-redux";
 
 export const CentreBooking = () => {
 
     const obj = useParams();
 
-    const [centre, setCentre] = useState({})
+    // const [centre, setCentre] = useState({})
     const [date, setDate] = useState("2021-12-19")
     const [time, setTime] = useState("")
     const [availableSlots, setAvailableslots] = useState([])
     const [bookingModal, setbookingModal] = useState(false)
     const [sessionBookModal, setsessionBookModal] = useState(false)
-    const { sessiontype } = useSelector(store => store.general, shallowEqual)
+    const { sessiontype,centre } = useSelector(store => store.general, shallowEqual)
     const { isAuth, user } = useSelector(store => store.auth, shallowEqual)
     const [sessionid, setSessionid] = useState("")
     const [slotid, setSlotid] = useState("")
@@ -32,9 +31,9 @@ export const CentreBooking = () => {
     })
 
 
-    useEffect(() => {
-        fetchCenter()
-    }, [obj.centre])
+    // useEffect(() => {
+    //     fetchCenter()
+    // }, [obj.centre])
 
     useEffect(() => {
         fetchSlots()
@@ -63,19 +62,19 @@ export const CentreBooking = () => {
     }
 
 
-    const fetchCenter = () => {
-        axios
-            .get(`http://localhost:7765/centres/${obj.centre}`, { withCredentials: true })
-            .then(res => {
-                console.log("data", res.data)
-                setCentre(res.data.centre)
-                localStorage.setItem("currentcentre", res.data.centre.centrename)
-            })
-            .catch(err => {
-                console.log("Not properly authenticated!");
-                console.log("Error", err);
-            })
-    }
+    // const fetchCenter = () => {
+    //     axios
+    //         .get(`http://localhost:7765/centres/${obj.centre}`, { withCredentials: true })
+    //         .then(res => {
+    //             console.log("data", res.data)
+    //             setCentre(res.data.centre)
+    //             localStorage.setItem("currentcentre", res.data.centre.centrename)
+    //         })
+    //         .catch(err => {
+    //             console.log("Not properly authenticated!");
+    //             console.log("Error", err);
+    //         })
+    // }
 
     const fetchSlots = () => {
         axios
@@ -157,6 +156,8 @@ export const CentreBooking = () => {
 
 
         BookDataFunction()
+
+        
         localStorage.setItem('bookingdetails', JSON.stringify(bookingdetails));
         history.push("/desktop")
     }

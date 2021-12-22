@@ -52,7 +52,7 @@ export const CultUpper = () => {
           {isAuth? trials >= 2 ? <>
             <div className="ind-tickets" id="ind-tickets-redeemed">
               <div className="rounded1"></div>
-              <div>
+              <div className="middlediv">
                 <h1>01</h1>
                 <button>Redeemed</button>
               </div>
@@ -60,7 +60,7 @@ export const CultUpper = () => {
             </div>
             <div className="ind-tickets" id="ind-tickets-redeemed">
               <div className="rounded1"></div>
-              <div>
+              <div className="middlediv">
                 <h1>02</h1>
                 <button>Redeemed</button>
               </div>
@@ -69,7 +69,7 @@ export const CultUpper = () => {
           </> : <>
             <div className="ind-tickets" id="ind-tickets-redeemed">
               <div className="rounded1"></div>
-              <div>
+              <div className="middlediv">
                 <h1>01</h1>
                 <button>Redeemed</button>
               </div>
@@ -77,7 +77,7 @@ export const CultUpper = () => {
             </div>
             <div className="ind-tickets">
               <div className="rounded1"></div>
-              <div>
+              <div className="middlediv">
                 <h1>02</h1>
                 <button>TRY FOR FREE</button>
               </div>
@@ -87,7 +87,7 @@ export const CultUpper = () => {
           </> : <>
           <div className="ind-tickets">
               <div className="rounded1"></div>
-              <div>
+              <div className="middlediv">
                 <h1>01</h1>
                 <button>TRY FOR FREE</button>
               </div>
@@ -96,7 +96,7 @@ export const CultUpper = () => {
 
           <div className="ind-tickets">
               <div className="rounded1"></div>
-              <div>
+              <div className="middlediv">
                 <h1>02</h1>
                 <button>TRY FOR FREE</button>
               </div>
@@ -335,6 +335,11 @@ const Freetrial = styled.div`
       background-color: white;
       /* z-index:1; */
     }
+
+    .middlediv{
+      padding-top:10px;
+    }
+
   }
 
   #ind-tickets-redeemed {

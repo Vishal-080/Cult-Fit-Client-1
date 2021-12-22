@@ -1,8 +1,6 @@
 .container {
     width: 1200px;
     margin: auto;
-    /* border:1px solid red; */
-    /* padding: 0px 16px; */
   }
 
 .home_card_section {
@@ -60,12 +58,12 @@
   }
   
   .Explore:hover {
-    filter: brightness(1.8);
+    filter: brightness(0.8);
+    cursor: pointer;
   }
   
   .home_card_section .top_section .sub_heading_section img {
     width: 10px;
-    /* transform: rotate(180deg); */
   }
   
   .home_card_section .top_section .subheading {
@@ -123,7 +121,6 @@
     font-weight: 390;
     font-size: 15px;
     line-height: 30px;
-    /* font-family: "BrandonTextWeb-Regular,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif"; */
   }
   
   .button_style1 {
@@ -133,7 +130,6 @@
     padding: 6px 10px;
     border-radius: 40px;
     text-transform: uppercase;
-    font-family: "Brandon Text Bold";
     cursor: pointer;
     transition: all 0.3s ease;
   }

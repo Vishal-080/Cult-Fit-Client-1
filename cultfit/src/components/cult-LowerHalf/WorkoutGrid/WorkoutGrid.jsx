@@ -106,7 +106,6 @@ export const WorkoutGrid = () => {
   const setSessionType = (el) => {
     dispatch(Actions(SET_SESSIONTYPE, el));
     history.push(`/sessiontype/${el}`);
-    // return <Redirect to={} />
   };
 
   return (

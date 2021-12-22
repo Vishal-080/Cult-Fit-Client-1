@@ -28,8 +28,6 @@ export const LandingPage = () => {
             })
     }
 
-
-
     useEffect(() => {
         axios.get("https://secure-plateau-49386.herokuapp.com/brand")
             .then((data) => {

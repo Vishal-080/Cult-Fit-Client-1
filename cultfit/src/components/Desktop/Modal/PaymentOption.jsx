@@ -36,7 +36,7 @@ export const PaymentOption = ({changeStatus}) => {
       </div>
       <div className="payment">
         <img src={paytm} alt="paytm-card" /> 
-        <button onClick={handleStatus}>Link Account</button>
+        <button className="paytmpayment" onClick={handleStatus}>Link Account</button>
       </div>
       <div className="payment">
         <img src={amazonpay} alt="amazonpay-card" /> 
