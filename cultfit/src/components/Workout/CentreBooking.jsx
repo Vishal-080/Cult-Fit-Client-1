@@ -7,9 +7,12 @@ import { shallowEqual, useSelector } from "react-redux";
 
 export const CentreBooking = () => {
 
+    useEffect(()=>{
+        window.scroll({top:0,behavior:'smooth'})
+    })
+
     const obj = useParams();
 
-    // const [centre, setCentre] = useState({})
     const [date, setDate] = useState("2021-12-19")
     const [time, setTime] = useState("")
     const [availableSlots, setAvailableslots] = useState([])
@@ -29,11 +32,6 @@ export const CentreBooking = () => {
         slotsid: "",
         date: date
     })
-
-
-    // useEffect(() => {
-    //     fetchCenter()
-    // }, [obj.centre])
 
     useEffect(() => {
         fetchSlots()

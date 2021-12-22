@@ -4,8 +4,14 @@ import location from './font/location-icon.svg'
 import calender from './font/calender.svg';
 
 import {ModalInFunctionalComponent} from "./Modal/Modal";
+import { useEffect } from 'react';
 
 const Desktop = () => {
+
+    useEffect(()=>{
+        window.scroll({top:0,behavior:'smooth'})
+    })
+
 
     const bookingdetails= JSON.parse(localStorage.getItem('bookingdetails'));
     const currentcentre =localStorage.getItem("currentcentre")

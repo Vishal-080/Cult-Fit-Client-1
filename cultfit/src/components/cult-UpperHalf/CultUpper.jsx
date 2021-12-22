@@ -289,7 +289,6 @@ const Freetrial = styled.div`
     height: 30px;
     text-align: left;
     font-size: 24px;
-    font-family: Brandon Text;
     font-style: normal;
     font-weight: bold;
     line-height: 30px;
@@ -300,8 +299,6 @@ const Freetrial = styled.div`
     margin-top: 19px;
     text-align: left;
     color: #a2a2a2;
-
-    font-family: Brandon Text;
     font-style: normal;
     font-weight: 390;
     font-size: 16px;
@@ -385,8 +382,6 @@ const Freetrial = styled.div`
     border-radius: 34px;
     color: white;
     border: none;
-
-    font-family: Brandon Text;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -403,8 +398,6 @@ const Freetrial = styled.div`
       text-align: left;
       color: #a2a2a2;
       margin-bottom: 0px;
-
-      font-family: Brandon Text;
       font-style: normal;
       font-weight: 390;
       font-size: 12px;
@@ -459,7 +452,6 @@ const VideoContainer = styled.div`
       text-align: left;
       margin-left:0px;
 
-      font-family: Brandon Text;
       font-style: normal;
       font-weight: 420;
       font-size: 14px;
@@ -571,7 +563,6 @@ const Elite = styled.div`
       flex-wrap: wrap;
     }
     .types * {
-      font-family: Brandon Text;
       font-style: normal;
       font-weight: 390;
       font-size: 12px;
@@ -658,7 +649,6 @@ const Card2 = styled.div`
     margin-left: 54px;
     display: flex;
 
-    font-family: Brandon Text;
     font-style: normal;
     font-weight: 390;
     font-size: 12px;
@@ -680,8 +670,6 @@ const Card2 = styled.div`
       width: 80%;
       height: 15px;
       margin-left: 45px;
-
-      font-family: Brandon Text;
       font-style: normal;
       font-weight: 390;
       font-size: 8px;

@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import styles from "./Booking.module.css"
 
 const Booking = () => {
+
+    useEffect(()=>{
+        window.scroll({top:0,behavior:'smooth'})
+    })
+
 
     const { location } = useSelector(store => store.general, shallowEqual)
     const BookData = JSON.parse(localStorage.getItem('BookData'));

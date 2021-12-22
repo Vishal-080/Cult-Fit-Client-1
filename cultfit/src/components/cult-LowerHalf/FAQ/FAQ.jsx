@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #f4f4fe;
-  // height: 1943px;
   padding: 50px 120px;
 
   @media screen and (max-width: 400px) {
@@ -94,7 +93,7 @@ const InnerDiv = styled.div`
   align-items: center;
   padding: 0px;
   height: 30px;
-  // border:1px solid red;
+
   @media screen and (max-width: 400px) {
     width: 90%;
   }

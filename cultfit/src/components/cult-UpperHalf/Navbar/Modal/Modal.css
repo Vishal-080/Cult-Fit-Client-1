@@ -18,7 +18,7 @@
   margin-left: 350px;
   border: none;
   font-size: 20px;
-  
+  cursor: pointer;
 }
 
 #signin-render #page-one-social {
@@ -318,26 +318,7 @@
   line-height: 17px;
 }
 
-.dropdownmenu>a>div{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin:15px 0px;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.dropdownmenu>a{
-  text-decoration:none; 
-  color:black;
-}
-
 .dropdownmenu>div:hover{
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.dropdownmenu>a>div:hover{
   opacity: 0.5;
   cursor: pointer;
 }

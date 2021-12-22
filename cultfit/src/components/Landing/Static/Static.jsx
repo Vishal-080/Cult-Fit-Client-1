@@ -1,6 +1,7 @@
 import styles from "./Static.module.css"
 
 export const StaticData = () => {
+
     return <div className={styles.ImageContainer}>
         <div className={styles.staticdata}>
             <img src="/LandingPage_icons/App.svg" alt="" />

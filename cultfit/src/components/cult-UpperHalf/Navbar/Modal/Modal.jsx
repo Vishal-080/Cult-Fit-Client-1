@@ -12,7 +12,6 @@ import "./Modal.css";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { LOGIN_FAILURE } from "../../../../Store/AuthStore/actionTypes";
 import { Actions } from "../../../../Store/AuthStore/action";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const customStyles = {
@@ -57,6 +56,11 @@ export const ModalInFunctionalComponent = () => {
     history.push("/")
   }
 
+  const profileclick = () => {
+    setDropDown(false)
+    history.push("/profile")
+  }
+
   return val ? (
     <>
       {isAuth ? <>
@@ -65,12 +69,10 @@ export const ModalInFunctionalComponent = () => {
           setDropDown(!dropdown)
         }} />
         {dropdown ? <div className="dropdownmenu">
-          <Link to="/profile">
-            <div>
-              <img src="https://static.cure.fit/assets/images/profile-icon.svg" />
-              Profile
-            </div>
-          </Link>
+          <div onClick={profileclick}>
+            <img src="https://static.cure.fit/assets/images/profile-icon.svg" />
+            Profile
+          </div>
           <div className="orders">
             <img src="https://static.cure.fit/assets/images/cart-black.svg" />
             Orders
