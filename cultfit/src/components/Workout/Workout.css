@@ -24,7 +24,7 @@
   width: 486px;
   height: 339px;
   left: 0px;
-  top: 0px;
+  top: 164px;
   order: 0;
   position: sticky;
   vertical-align: middle;
@@ -464,7 +464,7 @@
 }
 
 .centrediv>div:nth-child(2)>p {
-  color: transparent;
+  /* color: transparent; */
   text-decoration: none;
   font-style: normal;
   font-weight: 420;

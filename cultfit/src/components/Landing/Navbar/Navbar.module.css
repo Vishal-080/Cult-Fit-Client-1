@@ -1,3 +1,7 @@
+.mainNavbar{
+  width: 100%;
+}
+
 .Navbar{
     height: 64px;
     display: flex;
@@ -11,10 +15,10 @@
     /* width: 100%; */
     z-index: 100;
     padding:0px 36px;
-    width:1369px;
+    width:1440px;
     font-style: normal;
     font-weight: 390;
-    /* border:1px solid red; */
+    margin: auto;
 }
 
 #main_logo_home_page_div{

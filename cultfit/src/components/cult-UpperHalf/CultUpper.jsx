@@ -5,7 +5,6 @@ import vidimg from "./images/vidimg.svg";
 import tag from "./images/tag.svg";
 import forward from "./images/forward.svg";
 import timer from "./images/timer.svg";
-
 import topimgsmall from "./images/topimgsmall.svg";
 import axios from "axios";
 import { shallowEqual, useSelector } from "react-redux";
@@ -195,6 +194,11 @@ const Adimg = styled.div`
   height: 100%;
   margin-top: 65px;
 
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
   @media screen and (max-width: 400px) {
     width: 100%;
     height: 300px;
@@ -273,10 +277,11 @@ const Saletimer = styled.div`
 `;
 //4.free-trial div(till tickets)
 const Freetrial = styled.div`
-  width: 588px;
+  width: 1200px;
   height: 200px;
+  margin:auto;
   margin-top: 77px;
-  margin-left: 120px;
+  /* margin-left: 120px;*/
   /* background: #80808037; */
 
   .freetrial {
@@ -304,19 +309,21 @@ const Freetrial = styled.div`
   }
   .tickets {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-top: 30px;
     color: white;
 
     .ind-tickets {
       display: flex;
+      height: 100px;
     }
   }
   .tickets div {
     width: 282px;
-    height: 100px;
+    height: 78px;
     background-color: #414152;
     text-align: center;
+    margin-right:10px;
     .rounded1 {
       height: 30px;
       width: 30px;
@@ -337,7 +344,7 @@ const Freetrial = styled.div`
     }
 
     .middlediv{
-      padding-top:10px;
+      padding-top:5px;
     }
 
   }
@@ -427,9 +434,10 @@ const VideoContainer = styled.div`
   margin-top: 144px;
 
   .tag {
-    margin-left: 120px;
+    // margin-left: 120px;
+    width:1200px;
+    margin:auto;
     text-align: left;
-    font-family: Brandon Text;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;

@@ -1,8 +1,7 @@
 import './Workout.css';
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Actions } from '../../Store/GeneralStore/actions';
 import { SET_CENTRE } from '../../Store/GeneralStore/actionTypes';
@@ -17,6 +16,10 @@ const workoutData = {
 }
 
 const Workout = () => {
+
+    useEffect(()=>{
+        window.scroll({top:0,behavior:'smooth'})
+    })
 
     const obj = useParams();
     const [data, setData] = useState(workoutData[obj.session])
