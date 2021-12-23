@@ -24,8 +24,6 @@ export const LandingPage = () => {
         axios
             .get(`${process.env.REACT_APP_BACKEND_URL}/profile`, { withCredentials: true })
             .then(res => {
-                console.log("here2")
-                console.log("data", res.data.user)
                 dispatch(Actions(LOGIN_SUCCESS, res.data.user))
             })
             .catch(err => {

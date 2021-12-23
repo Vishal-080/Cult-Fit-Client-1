@@ -14,7 +14,6 @@ export const Otp = () => {
     axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/bookings`, bookingdetails)
         .then(res => {
-            console.log("data", res.data)
             history.push("/bookingdetails")
         })
         .catch(err => {

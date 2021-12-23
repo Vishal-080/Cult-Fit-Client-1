@@ -22,8 +22,6 @@ export const Signupform = () => {
 
     const { name, value } = e.target;
 
-    console.log(name, value)
-
     setUserData({
       ...userData,
       [name]: value,
@@ -45,15 +43,10 @@ export const Signupform = () => {
       return
     }
 
-    console.log(userData)
-
-
     axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, userData)
       .then(res => {
         setSignUpError(false)
         emptyData()
-        console.log(res);
-        console.log(res.data);
         history.push("/");
         alert("Kindly click on login")
       }).catch(function (e) {

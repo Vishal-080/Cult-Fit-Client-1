@@ -29,8 +29,6 @@ const Workout = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    console.log(sessiontype)
-
     const fetchCenters = () => {
         axios
             .get(`${process.env.REACT_APP_BACKEND_URL}/cities/centres/${location}`, { withCredentials: true })

@@ -8,13 +8,10 @@ const Booking = () => {
         window.scroll({top:0,behavior:'smooth'})
     })
 
-
     const { location } = useSelector(store => store.general, shallowEqual)
     const BookData = JSON.parse(localStorage.getItem('BookData'));
 
     const currentcentre = localStorage.getItem('currentcentre');
-
-    console.log(BookData)
 
     return (
         <div className={styles.bookingContainer}>

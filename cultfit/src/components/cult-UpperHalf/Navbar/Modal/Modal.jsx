@@ -65,7 +65,6 @@ export const ModalInFunctionalComponent = () => {
     <>
       {isAuth ? <>
         <img src="/workoutimages/drop.svg" className="downarrow" onClick={() => {
-          console.log("here")
           setDropDown(!dropdown)
         }} />
         {dropdown ? <div className="dropdownmenu">

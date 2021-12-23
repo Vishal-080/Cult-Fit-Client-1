@@ -16,8 +16,6 @@ const Desktop = () => {
     const bookingdetails= JSON.parse(localStorage.getItem('bookingdetails'));
     const currentcentre =localStorage.getItem("currentcentre")
 
-    console.log(bookingdetails.date,currentcentre)
-
     return (
         <div className='desktopcontainer'>
             <div className="flexcontainer">

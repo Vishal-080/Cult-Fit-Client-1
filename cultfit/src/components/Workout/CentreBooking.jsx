@@ -47,7 +47,6 @@ export const CentreBooking = () => {
         axios
             .get(`${process.env.REACT_APP_BACKEND_URL}/sessions/sessionid/${sessiontype}`, { withCredentials: true })
             .then(res => {
-                console.log("sessionid", res.data.session[0]._id)
                 setbookingdetails({
                     ...bookingdetails,
                     sessionid: res.data.session[0]._id
@@ -59,26 +58,10 @@ export const CentreBooking = () => {
             })
     }
 
-
-    // const fetchCenter = () => {
-    //     axios
-    //         .get(`${process.env.REACT_APP_BACKEND_URL}/centres/${obj.centre}`, { withCredentials: true })
-    //         .then(res => {
-    //             console.log("data", res.data)
-    //             setCentre(res.data.centre)
-    //             localStorage.setItem("currentcentre", res.data.centre.centrename)
-    //         })
-    //         .catch(err => {
-    //             console.log("Not properly authenticated!");
-    //             console.log("Error", err);
-    //         })
-    // }
-
     const fetchSlots = () => {
         axios
             .get(`${process.env.REACT_APP_BACKEND_URL}/bookings/availableslots/${date}/${sessiontype}/${obj.centre}`, { withCredentials: true })
             .then(res => {
-                console.log("data", res.data.filteredslots)
                 setAvailableslots(res.data.filteredslots)
             })
             .catch(err => {
@@ -90,12 +73,9 @@ export const CentreBooking = () => {
 
     const DoBooking = () => {
 
-        console.log(bookingdetails)
-
         axios
             .post(`${process.env.REACT_APP_BACKEND_URL}/bookings`, bookingdetails)
             .then(res => {
-                console.log("data", res.data)
                 setsessionBookModal(true)
                 BookDataFunction()
             })
@@ -107,7 +87,6 @@ export const CentreBooking = () => {
 
 
     const loggedInorNot = () => {
-        console.log("here")
         setbookingModal(false)
         if (!isAuth) {
             alert("Kindly login to proceed further")
@@ -138,7 +117,6 @@ export const CentreBooking = () => {
     }
 
     const BookDataFunction = () => {
-        console.log("BookDataFunction")
         const BookData = {
             sessiontype: sessiontype,
             date: date,
@@ -150,12 +128,9 @@ export const CentreBooking = () => {
     }
 
     const makepayment = () => {
-        console.log(bookingdetails)
-
 
         BookDataFunction()
 
-        
         localStorage.setItem('bookingdetails', JSON.stringify(bookingdetails));
         history.push("/desktop")
     }

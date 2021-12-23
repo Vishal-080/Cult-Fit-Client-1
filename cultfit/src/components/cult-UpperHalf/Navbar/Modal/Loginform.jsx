@@ -46,7 +46,6 @@ export const Loginform = ({closeModal}) => {
       .then(res => {
         setSignUpError(false)
         emptyData()
-        console.log(res.data);
         closeModal()
         dispatch(Actions(LOGIN_SUCCESS, res.data.user))
         history.push("/");
