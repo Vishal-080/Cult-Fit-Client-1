@@ -10,8 +10,15 @@ import { Intro } from "./Intro/Intro";
 import { StaticData } from "./Static/Static";
 
 export const LandingPage = () => {
+
+    useEffect(()=>{
+        window.scroll({top:0,behavior:'smooth'})
+    })
+
+
     const [sliding, setSliding] = useState([]);
     const dispatch = useDispatch();
+
 
     const fetchUser = () => {
         axios
