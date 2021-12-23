@@ -12,7 +12,7 @@ export const Otp = () => {
     const bookingdetails= JSON.parse(localStorage.getItem('bookingdetails'));
 
     axios
-        .post("http://localhost:7765/bookings", bookingdetails)
+        .post(`${process.env.REACT_APP_BACKEND_URL}/bookings`, bookingdetails)
         .then(res => {
             console.log("data", res.data)
             history.push("/bookingdetails")

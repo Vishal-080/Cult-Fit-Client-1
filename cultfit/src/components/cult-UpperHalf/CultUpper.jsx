@@ -18,7 +18,7 @@ export const CultUpper = () => {
 
   if (isAuth) {
     axios
-      .get(`http://localhost:7765/users/${user._id}`, { withCredentials: true })
+      .get(`${process.env.REACT_APP_BACKEND_URL}/users/${user._id}`, { withCredentials: true })
       .then(res => {
         setTrials(res.data.user.trials)
         localStorage.setItem('trials', res.data.user.trials);

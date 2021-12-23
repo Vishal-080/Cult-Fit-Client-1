@@ -33,7 +33,7 @@ const Workout = () => {
 
     const fetchCenters = () => {
         axios
-            .get(`http://localhost:7765/cities/centres/${location}`, { withCredentials: true })
+            .get(`${process.env.REACT_APP_BACKEND_URL}/cities/centres/${location}`, { withCredentials: true })
             .then(res => {
                 setCentres(res.data)
             })

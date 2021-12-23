@@ -8,7 +8,7 @@ export const Socialpage = () => {
 
   const googleAuth = () => {
     localStorage.setItem("loginMethod","Fastlogin")
-    window.open('http://localhost:7765/auth/google','_self');
+    window.open(`${process.env.REACT_APP_BACKEND_URL}/auth/google`,'_self');
   }
 
   return (

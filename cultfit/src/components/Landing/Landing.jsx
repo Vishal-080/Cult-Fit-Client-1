@@ -22,7 +22,7 @@ export const LandingPage = () => {
 
     const fetchUser = () => {
         axios
-            .get("http://localhost:7765/profile", { withCredentials: true })
+            .get(`${process.env.REACT_APP_BACKEND_URL}/profile`, { withCredentials: true })
             .then(res => {
                 console.log("here2")
                 console.log("data", res.data.user)

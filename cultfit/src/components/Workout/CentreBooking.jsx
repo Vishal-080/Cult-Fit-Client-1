@@ -45,7 +45,7 @@ export const CentreBooking = () => {
 
     const fetchSessionid = () => {
         axios
-            .get(`http://localhost:7765/sessions/sessionid/${sessiontype}`, { withCredentials: true })
+            .get(`${process.env.REACT_APP_BACKEND_URL}/sessions/sessionid/${sessiontype}`, { withCredentials: true })
             .then(res => {
                 console.log("sessionid", res.data.session[0]._id)
                 setbookingdetails({
@@ -62,7 +62,7 @@ export const CentreBooking = () => {
 
     // const fetchCenter = () => {
     //     axios
-    //         .get(`http://localhost:7765/centres/${obj.centre}`, { withCredentials: true })
+    //         .get(`${process.env.REACT_APP_BACKEND_URL}/centres/${obj.centre}`, { withCredentials: true })
     //         .then(res => {
     //             console.log("data", res.data)
     //             setCentre(res.data.centre)
@@ -76,7 +76,7 @@ export const CentreBooking = () => {
 
     const fetchSlots = () => {
         axios
-            .get(`http://localhost:7765/bookings/availableslots/${date}/${sessiontype}/${obj.centre}`, { withCredentials: true })
+            .get(`${process.env.REACT_APP_BACKEND_URL}/bookings/availableslots/${date}/${sessiontype}/${obj.centre}`, { withCredentials: true })
             .then(res => {
                 console.log("data", res.data.filteredslots)
                 setAvailableslots(res.data.filteredslots)
@@ -93,7 +93,7 @@ export const CentreBooking = () => {
         console.log(bookingdetails)
 
         axios
-            .post("http://localhost:7765/bookings", bookingdetails)
+            .post(`${process.env.REACT_APP_BACKEND_URL}/bookings`, bookingdetails)
             .then(res => {
                 console.log("data", res.data)
                 setsessionBookModal(true)

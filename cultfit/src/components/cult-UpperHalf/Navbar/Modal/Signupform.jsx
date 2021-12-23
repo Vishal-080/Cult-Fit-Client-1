@@ -48,7 +48,7 @@ export const Signupform = () => {
     console.log(userData)
 
 
-    axios.post("http://localhost:7765/register", userData)
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, userData)
       .then(res => {
         setSignUpError(false)
         emptyData()

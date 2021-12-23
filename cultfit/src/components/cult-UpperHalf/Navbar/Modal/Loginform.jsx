@@ -42,7 +42,7 @@ export const Loginform = ({closeModal}) => {
       return
     }
 
-    axios.post("http://localhost:7765/login", userData)
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, userData)
       .then(res => {
         setSignUpError(false)
         emptyData()
