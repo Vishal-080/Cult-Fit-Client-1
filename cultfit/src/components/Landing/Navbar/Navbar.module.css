@@ -14,8 +14,8 @@
     top: 0;
     /* width: 100%; */
     z-index: 100;
-    padding:0px 36px;
-    width:1440px;
+    /* padding:0px 36px; */
+    width:100%;
     font-style: normal;
     font-weight: 390;
     margin: auto;
@@ -23,6 +23,7 @@
 
 #main_logo_home_page_div{
   width:180px;
+  padding: 0px 30px;
 }
 
 
@@ -32,7 +33,7 @@
     justify-content: space-around;
     font-size: 12px;
     line-height: 17px;
-    width:38.61%;
+    min-width:38.61%;
     /* margin-right: 14.86%; */
   }
 
@@ -51,8 +52,9 @@
     align-items: center;
     justify-content: space-between;
     font-size: 14px;
-    width:17.36%;
+    min-width:17.36%;
     line-height: 20px;
+    padding: 0px 30px;
   }
 
   .Navbar>div:nth-child(3)>div{
