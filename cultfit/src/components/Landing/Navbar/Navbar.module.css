@@ -12,9 +12,7 @@
     box-shadow: 0px 0px 10px #00000044;
     position: fixed;
     top: 0;
-    /* width: 100%; */
     z-index: 100;
-    /* padding:0px 36px; */
     width:100%;
     font-style: normal;
     font-weight: 390;
@@ -71,10 +69,21 @@
 @media screen and (max-width: 400px) {
 
   .Navbar{
-    justify-content:unset;
-    width: 90%;
-    padding:0px 20px;
+    justify-content: flex-start;
+    width:400px;
   }
+
+  #main_logo_home_page_div{
+    width:0px;
+    padding: 0px;
+  }
+
+  
+  .Navbar>div:nth-child(2){
+    min-width:10%;
+    margin-left: 100px;
+  }
+
 
   .Navbar>div:nth-child(2)>div {
     margin-right: 10px;
@@ -85,13 +94,6 @@
   }
 
 
-  .Navbar>div:nth-child(2){
-    width:30%;
-  }
-
-  /* .Navbar>div:nth-child(1) {
-    margin-left: 0px;
-  } */
 
   .displaynone{
     display: none;
